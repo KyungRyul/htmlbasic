@@ -1,29 +1,62 @@
 <meta charset="UTF-8">
-<h1><a href="index.html">메인화면</a></h1>
+<!-- 태그에 직접 style 주지말고
+style안에 id나 class, 그리고 html 태그를 선언하고
+css를 적용해보세요  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+    * {
+        /* border-style: solid; */
+        font-family: 'Nanum Pen Script', cursive;
+        color: #eeeeee;
+    }
+    body {
+        background-image: url(./image/main.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }    
+    a:hover {
+        background-color: bisque;
+    }
 
+    .black {
+        color: black;
+    }
+</style>
+신청자 과목정보 교재정보 첨부파일 비고
+<h1><a href="index.html">메인화면</a></h1>
+<body style="background-color: darkcyan">
+
+<div id="" class="" style="width: 500px;">
 <form>
-    <fieldset>
-        <legend>개인정보</legend>
-        <label for="">이름</label>
-        <input type="text" autofocus>
-        <br>
-        <label for="">생년월일</label>
-        <input type="text" required>
+    <fieldset id="" class="" style="">
+        <legend>검색조건</legend>
+        <b>방법</b>        
+        <input type="radio" name="sl">
+        <label for="">학수번호</label>        
+        <input type="radio" name="sl">
+        <label for="">교과목</label>        
+        <input type="radio" name="sl">
+        <label for="">학과</label>
+        
+        
+        
     </fieldset>
 
-    <fieldset disabled>
-        <legend>항공사선택</legend>
-        <select>
-            <option>대한항공</option>
-            <option>아시아나</option>
-            <option>제주항공</option>
-            <option>에어부산</option>
+    <fieldset style="background-color: yellowgreen">
+        <legend>수강과목</legend>
+        <select class="black">
+            <option class="black">대한항공</option>
+            <option class="black">아시아나</option>
+            <option class="black">제주항공</option>
+            <option class="black">에어부산</option>
         </select>
 
     </fieldset>
 
     <fieldset>
-        <legend>일정선택</legend>
+        <legend>교재정보</legend>
         <label>출발일</label>
         <input type="date">
         <label>도착일</label>
@@ -31,13 +64,16 @@
     </fieldset>
 
     <fieldset>
-        <legend>신분증을 첨부하시오</legend>
+        <legend>학생증</legend>
         <label for=""></label>
         <input type="file">
     </fieldset>
 
     <fieldset>
+        <legend>비고</legend>
         <input type="submit" value="신청하기">
         <input type="reset" value="다시작성">
     </fieldset>
 </form>
+</div>
+</body>
