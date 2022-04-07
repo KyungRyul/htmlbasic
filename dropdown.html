@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<style>
+    .dropdownbtn {
+        background-color: brown;
+        color: white;
+        padding: 8;
+        font-size: 16;
+        border: none;
+    }
+
+    .dropcontent a {
+        display: block;
+        color: black;
+        padding: 12px 19.5px;
+        text-decoration: none;
+    }
+
+    .dropcontent {
+        position: absolute;
+        /* 숨김 */
+        display: none;     
+    }
+        
+    .dropdown:hover .dropcontent {
+        /* 호버했을때 나타내기 */
+        display: block;
+    }
+
+    .dropcontent a:hover {
+        background-color: lightcoral;
+        width: auto;
+    }
+</style>
+<h2>드랍다운메뉴</h2>
+
+<p>여기는 드랍다운 영역</p>
+
+<div class="dropdown">
+    <button class="dropdownbtn">드랍다운</button>
+    <div class="dropcontent">
+        <a href="">메뉴1</a>
+        <a href="">메뉴2</a>
+        <a href="">메뉴3</a>
+    </div>
+</div>
