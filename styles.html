@@ -24,15 +24,83 @@
         position: absolute;
         z-index: 1;
     }
+
+    p#border{
+        border-style: solid;
+    }
+
+    p#border2{
+        border-top-style: solid;
+        border-left-style: double;
+        border-right-style: groove;
+        border-bottom-style: dotted;
+    }
+
+    #marginP {
+        width: 700;
+        height: 700;
+        background-color: lightcoral;
+    }
+    #margin1 {
+        width: 300;
+        height: 300;
+        background-color: blueviolet;
+    }
+    #margin2 {
+        width: 300;
+        height: 300;
+        background-color: #20b2aa;
+        /* margin-top: 50;
+        margin-left: 50;
+        margin-bottom: 120;
+        margin-right: 50; */
+        /* 위 , 오른 , 아래 , 왼쪽 */
+        margin: 20 0 0 20
+    }
+
+    #padding {
+        border: 1px solid black;
+        background-color: lightgreen;
+        padding: 50 50 50 50;
+    }
 </style>
 
+<h2>z-index</h2>
 <div id="zh">
 <div id="h">헤더</div>
 <div id="m">메인</div>
 <div id="f">푸터</div>
 </div>
-<script src="
-https://kit.fontawesome.com/94ccc25c03.js" crossorigin="anonymous"></script>
+
+<h2>아이콘</h2>
 <i class="fa-solid fa-ghost fa-xs"></i>
 <i class="fa-solid fa-ghost fa-2x"></i>
 <i class="fa-solid fa-ghost fa-10x"></i>
+
+<h2>border</h2>
+<p id="border">css활용</p>
+<p id="border2">css활용2</p>
+
+<h2>마진활용방법</h2>
+<div id="marginP">
+<div id="margin1">마진1</div>
+<div id="margin2">마진2</div>
+</div>
+
+<h2>패딩활용방법</h2>
+<div id="padding">
+    패딩은 겨울에 입는 옷이 아니다.    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div style="height: 10000;">
+</div>
