@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        animation-name: slide;
+        animation-duration: 1s;
+    }
+    @keyframes slide {
+        from {
+            margin-left: 100%;
+            width: 300%;
+        }
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+
+    p {
+        animation-name: slide;
+        animation-duration: 3s;
+    }
+
+    #aniDiv {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        /* 애니메이션이름 - 지속시간 - 반복횟수 */
+        animation: color 2s infinite;
+    }
+
+    @keyframes color {
+        from {
+            background-color: red;
+            margin-left: 100%;
+            width: 300px;
+            height: 300px;
+        }
+        to {
+            background-color: blueviolet;
+            margin-left: 0%;
+            width: 100px;
+            height: 100px;
+        }
+    }
+</style>
+
+<body>
+    <h1>제일큰 제목은 : 효성직업전문학교</h1>
+    <p>밑에 내용은 : 반응형UIUX제작</p>
+
+    <div id="aniDiv">
+
+    </div>
+</body>
+</html>
