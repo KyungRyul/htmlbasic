@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션바</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        /* height: 100%; */
+        position: fixed;
+        background-color: antiquewhite;        
+    }
+
+    li {
+        /* 왼쪽에 있던 메뉴바를 위쪽 인라인으로 */
+        display: inline-block;        
+        border-right: 1px solid #bbb;
+    }
+
+    li:nth-child(4) {
+        border-right: none;
+    }
+    li:nth-child(5) {
+        border-right: none;
+    }
+    
+    li a {
+        display: block;
+        color: #000;        
+        padding: 20px;
+        text-decoration: none;
+        font-size: 30px;
+        text-align: center;
+    }
+    #content {
+        /* margin-top: 25%; */
+        /* padding: 30px; */
+        /* 위 오른쪽 아래 왼쪽 */
+        padding: 80px 20px 0px 20px ;
+        height: 1000px;
+    }
+
+    li a.active {
+        background-color: brown;
+        color: white;
+    }
+
+    /* active 클래스가 아닌 a태그가 호버됬을때만 작동 */
+    li a:hover:not(.active){
+        background-color: burlywood;
+        color: white;
+    }
+
+    #divhome {
+        background-color: lightblue;
+    }
+    #divnews {
+        background-color: lightcoral;
+    }
+    #divcontentof {
+        background-color: lightcyan;
+    }
+    #divintro {
+        background-color: lightgoldenrodyellow;
+    } 
+    #divdummy {
+        background-color: lightseagreen;
+    } 
+
+    #myinfo {
+        float: right;
+    }
+
+    #dropcontent {
+        display: none;
+        position: absolute;
+        background-color: aliceblue;
+        width: 140px;        
+    }
+
+    #myinfo:hover #dropcontent{
+        display: block;
+    }
+
+    #dropcontent a {
+        font-size: 20px;
+    } 
+
+    /* media width 400 까지는 아래에 스타일을 적용한다 */
+    @media (max-width : 400px) {
+        ul {
+            position: static;
+        }
+        li {
+            display: block;
+        }
+        #myinfo {
+            float: none;
+        }
+    }
+</style>
+<body>    
+    <ul>
+        <li><a class="active" href="#home">홈</a></li>
+        <li><a href="#news">소식</a></li>
+        <li><a href="#contentof">컨텐츠</a></li>
+        <li><a href="#intro">소개</a></li>
+        <li id="myinfo">
+            <a href="#divdummy" id="dropbtn">내정보</a>
+            <div id="dropcontent">
+                <a hre="">정보수정</a>
+                <a hre="">신청내역</a>
+                <a hre="">탈퇴하기</a>
+            </div>
+        </li>
+    </ul>    
+
+    <div id="content">
+    <div id="divhome">
+    <h1 id="home">홈</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    </div>
+    <div id="divnews">
+    <h1 id="news">소식</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    </div>
+    <div id="divcontentof">
+    <h1 id="contentof">컨텐츠</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    </div>
+    <div id="divintro">
+    <h1 id="intro">소개</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    <div id="divdummy">
+    <h1>더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    <h1 >더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    <h1 >더미</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been
+         the industry's standard dummy text ever since
+          the 1500s, when an unknown printer took a g
+          alley of type and scrambled it to make a typ
+          e specimen book. It has survived not only fi
+          ve centuries, but also the leap into electron
+          ic typesetting, remaining essentially uncha
+          nged. It was popularised in the 1960s with t
+          he release of Letraset sheets containing Lorem
+           Ipsum passages, and more recently with deskto
+           p publishing software like Aldus PageMaker i
+           ncluding versions of Lorem Ipsum.
+    </p>
+    </div>
+    </div>
+    </div>
+    
+</body>
+</html>
