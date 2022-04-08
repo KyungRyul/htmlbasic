@@ -20,12 +20,7 @@
             margin-left: 0%;
             width: 100%;
         }
-    }
-
-    p {
-        animation-name: slide;
-        animation-duration: 3s;
-    }
+    }   
 
     #aniDiv {
         width: 300px;
@@ -49,13 +44,59 @@
             height: 100px;
         }
     }
-</style>
 
+    #aniDiv2 {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        position: relative;        
+        animation: move 5s infinite;
+        animation-direction: alternate;
+
+    }
+
+    @keyframes move {
+        0%  { background-color: red; left: 0px; top: 0px;}
+        25% { background-color: orange; left: 200px; top: 0px;}
+        50% { background-color: yellow; left: 200px; top: 200px;}
+        75% { background-color: green; left: 0px; top: 200px;}
+        100% { background-color: blue; left: 0px; top: 0px;}
+    }
+
+    @keyframes banbok {
+        0% {
+            left: 75%;
+            top: 0px;
+        }
+        100% {
+            left: 0;
+            top: 0px;
+        }
+    }
+
+    p {
+        position: relative;
+        animation: banbok 2s infinite;
+        animation-direction: alternate;
+    }
+
+    p:hover {
+        animation-play-state: paused;
+    }
+</style>
+<!-- javascript
+2s
+1s - 정가운데
+hover 비교해서 1s 맞으면 성공! -->
 <body>
-    <h1>제일큰 제목은 : 효성직업전문학교</h1>
+    <h1>아래에 텍스트를 정가운데에서 멈추게하기</h1>
     <p>밑에 내용은 : 반응형UIUX제작</p>
 
-    <div id="aniDiv">
+    <!-- <div id="aniDiv">
+
+    </div> -->
+
+    <div id="aniDiv2">
 
     </div>
 </body>
