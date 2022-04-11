@@ -31,6 +31,21 @@
         margin: 2.5% 0% 0% 2.5%;
     }
 
+    .left-content {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        flex-wrap: wrap;
+    }
+
+    .left-item {
+        flex-grow: 10%;
+        flex-shrink: 10%;
+
+        /* flex: auto; */
+        
+    }
+
     #right {
         margin-left: 5%;
         width: 28%;
@@ -44,6 +59,17 @@
         background-color: bisque;
         text-align: center;
         padding: 20px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        /* border-style: 1px soild ; */
+        border-color: #cecbcb;
     }
 
     
@@ -60,7 +86,50 @@
         <div id="container">
             <!-- 왼쪽콘텐츠 -->
             <div id="left">        
-                <img src="https://ssl.pstatic.net/tveta/libs/1386/1386737/256fdc5e29f58fe45c25_20220407141027163.jpg" width="99%">
+                <!-- <img src="https://ssl.pstatic.net/tveta/libs/1386/1386737/256fdc5e29f58fe45c25_20220407141027163.jpg" width="99%"> -->
+                <div class="left-content">
+                    <div class="left-item">
+                        <img src="https://ssl.pstatic.net/tveta/libs/1379/1379765/7e459921bb918778d905_20220408171658494.jpg" width="100%">
+                    </div>
+                    <div class="left-item">
+                        <table border="1">
+                            <tr>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"></td>
+                                <td><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"></td>                            </tr>
+                        </table>
+                    </div>
+                    <div class="left-item">탑스토리</div>
+                    <div class="left-item">스토리</div>
+                    <div class="left-item">미디어뷰</div>
+                </div>
             </div>
             <!-- 오른쪽컨텐츠 -->
             <div id="right">

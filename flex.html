@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        background-color: brown;
+        display: flex;
+        flex-direction: row;
+        /* flex-wrap: wrap; */        
+        /* direction에 정방향; */
+        /* justify-content: center; */
+        /* direction에 수직; */
+        /* align-items: center; */
+        /* space-between : div 간 높이 맞지 않을때 같은간격 조절 */
+        align-content: space-between;
+        
+    }
+    .item {            
+        width: 100px;        
+        background-color: aquamarine;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .item:nth-child(1) {     
+        background-image: url(./image/main.jpg);           
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .item:nth-child(2) {
+        
+        flex-grow: 6;
+        flex-shrink: 6;
+    }
+    .item:nth-child(3) {
+        
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item">
+            <p>이곳은 헤더의 위치입니다.</p>
+            <p>이곳은 헤더의 위치입니다.</p>
+            <p>이곳은 헤더의 위치입니다.</p>
+            <p>이곳은 헤더의 위치입니다.</p>
+            <p>이곳은 헤더의 위치입니다.</p>
+            <p>이곳은 헤더의 위치입니다.</p>
+            
+        </div>
+        <div class="item">3</div>
+    </div>
+    
+</body>
+</html>
