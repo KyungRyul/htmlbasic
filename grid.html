@@ -1,0 +1,64 @@
+<!-- 웹사이트 레이아웃을 만드는방법
+table 2*2
+개별적인 div 생성해서 float left
+flex
+grid
+위 방법들은 각 개발자의 성향이나, 프로젝트의 방향에 따라
+달라질 수 있고, 맞고 틀림을 나눌 수 없다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        height: 50vh;
+        display: grid;
+        /* grid-column: 1fr 2fr 3fr;
+        grid-row: auto auto auto; */
+        /* 총 9개의 div 에서 colum 3개로 나눠서 3*3 으로 나뉨 */
+        grid-template-columns: auto auto auto; 
+        gap: 10px;
+    }
+    .item {
+        width: 100%;
+        height: 100%;
+        background-color: lightcoral;
+    }
+
+    .item:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .item:nth-child(2) {
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .item:nth-child(3) {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="item">헤더</div>
+        <div class="item">사이드메뉴</div>
+        <div class="item">컨텐츠</div>
+        <!-- <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div> -->
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/* 2021-11-01 OH */
+
+.sub__nav_area .sub__nav ul.nav4 li {
+    flex: 1 0 20%;
+    max-width: 20%;
+  }
+  .gnb_wrap .depth01 .depth02-bx.list-03 {
+      width: 47.5em;
+    }
+
+  .smile-bnr {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 59px;
+    left: 0;
+    z-index: 1;
+    transition: all .25s ease-in-out;
+	
+  }
+  
+  .smile-logo {
+    display: block;
+    width: 109px;
+    max-width: 109px !important;
+    height: 88px;
+    margin-left: 16px;
+  }
+  
+  #header.on .smile-logo {
+    max-width: 80px !important;
+  }
+  
+  .gnb_wrap .logo_box {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    
+    .gnb_wrap {
+      height: 60px;
+      background-color: #fff;
+      z-index: 2;
+    }
+    
+    .smile-bnr {
+      display: block;
+      top: 0;
+      transform: translateY(-100%);
+	  top: 59px;
+      transform: translateY(0);
+    }
+    
+    .smile-bnr.on {
+      top: 59px;
+      transform: translateY(0);
+    }
+    
+    .smile-logo {
+      display: none;
+    }
+  }
+
+
+.d-block {
+  display: block!important;
+}
+
+.d-none {
+  display: none!important;
+}
+
+@media (min-width: 1024px) {
+  .d-lg-block {
+    display: block!important;
+  }
+  .d-lg-none {
+    display: none!important;
+  }
+}
+
+.pop-content.smile-campaign .pop-body {
+  height: 90vh;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+
+.pop-content.smile-campaign .btn-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.pop-content.smile-campaign .btn-wrap .btn {
+  flex: 1 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pop-content.smile-campaign .btn-wrap .btn--1 {
+  background-color: #572a31;
+  color: #fff;
+  border: 1px solid #572a31;
+}
+
+.pop-content.smile-campaign .btn-wrap .btn--2 {
+  background-color: #fff;
+  color: #572a31;
+  border: 1px solid #572a31;
+}

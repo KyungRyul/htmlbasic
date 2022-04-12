@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .header {
+        grid-area: hd;
+        background-color: antiquewhite;
+    }
+    .side {
+        grid-area: sd;
+        background-color: bisque;
+    }
+    .content {
+        grid-area: ct;
+        background-color: violet;
+    }
+    .footer {
+        grid-area: ft;
+        background-color: lightgray;
+    }
+
+    .container {
+        height: 50vh;
+        display: grid;
+        grid-template-areas: 
+        "hd hd hd hd hd hd hd hd hd"
+        "sd sd ct ct ct ct ct ct ct"
+        "sd sd ct ct ct ct ct ct ct"
+        "ft ft ft ft ft ft ft ft ft"
+        ;
+    }
+    .item {
+        width: 100%;
+        height: 100%;
+        background-color: lightcoral;
+    }
+
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="header">헤더</div>
+        <div class="side">사이드메뉴</div>
+        <div class="content">컨텐츠</div>
+        <div class="footer">푸터</div>
+        <!-- <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div> -->
+    </div>
+    
+</body>
+</html>
