@@ -9,7 +9,10 @@
 <body>
     <h1>할일목록</h1>    
     <div>
-        <input type="text" id="item">
+        <!-- window.event.keyCode==13 => enter키 -->
+        <!-- onkeyup 속성안에 js 코드를 넣어줌 -->
+        <input type="text" id="item" 
+        onkeyup="if(window.event.keyCode==13){addItem()}">
         <button onclick="addItem()">추가</button>
     </div>
     <ul id="todolist">
@@ -17,7 +20,8 @@
     </ul>
 </body>
 </html>
-<script>
+<script>    
+    
     function addItem() {        
         // input value 를 todo변수에 저장
         var todo = document.getElementById('item').value;
@@ -27,9 +31,31 @@
         // li 태그를 생성
         var listitem = document.createElement('li');
         // input에 있는 할일을 li태그 안에 넣어줌
-        listitem.innerText = todo;
+        listitem.innerText = todo;        
         // 만들어진 할일(아이템)을 ul태그의 자식으로 append
         list.appendChild(listitem);
+        // input 의 value 공백으로        
+        document.getElementById('item').value = '';
+
+        // x버튼 생성
+        var xbtn = document.createElement('button');
+        // x버튼에 class 를 close 부여        
+        xbtn.className = "close";
+        // <button class="close">
+        // &times => html 의 엔티티로써 x를 표현하도록 약속.
+        xbtn.innerHTML = '&times';        
+        // 버튼에 onlick 속성을 부여한다.
+        xbtn.onclick = function(e) {
+            // e = 내가 클릭한 버튼
+            // pnode = 내가선택한 버튼의 부모인 li
+            var pnode = e.target.parentNode;
+            // ul태그의 자식중에서 선택한 li을 삭제하겟다
+            list.removeChild(pnode);
+        }
+
+        // li 태그의 자식요소로 x버튼을 넣어줌
+        listitem.appendChild(xbtn);
+        
 
     }
 
