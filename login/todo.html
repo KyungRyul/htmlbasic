@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>할일목록</h1>    
+    <div>
+        <input type="text" id="item">
+        <button onclick="addItem()">추가</button>
+    </div>
+    <ul id="todolist">
+        
+    </ul>
+</body>
+</html>
+<script>
+    function addItem() {        
+        // input value 를 todo변수에 저장
+        var todo = document.getElementById('item').value;
+        alert(todo);
+        // ul 태그를 list변수에 저장
+        var list = document.getElementById('todolist');
+        // li 태그를 생성
+        var listitem = document.createElement('li');
+        // input에 있는 할일을 li태그 안에 넣어줌
+        listitem.innerText = todo;
+        // 만들어진 할일(아이템)을 ul태그의 자식으로 append
+        list.appendChild(listitem);
+
+    }
+
+</script>

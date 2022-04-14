@@ -80,21 +80,16 @@
   function login() {  
     // querySelector html과 소통하는 길  
     var id = document.querySelector(".form-control").value;
-    var pw = document.querySelector("input[name='pw']").value;    
-    console.log(id);
-    console.log(pw);
+    var pw = document.querySelector("input[name='pw']").value;        
     alert("환영합니다!");
+    location.href = "todo.html";
   }
 
   function setClock() {
-    var date = new Date();
-    console.log(date.getHours());
-    console.log(date.getMinutes());
-    console.log(date.getSeconds());    
-    var time = date.getHours() + "시" 
-    + date.getMinutes() + "분"
-    + date.getSeconds() + "초"
-    document.getElementById("date").innerHTML = date;
+    var date = new Date();    
+    var time = date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초";
+    var ymd = date.getFullYear() + "년"+ date.getMonth() + "월"+ date.getDay() + "일";
+    document.getElementById("date").innerHTML = ymd;
     document.getElementById("time").innerHTML = time;
   }
 
