@@ -36,8 +36,9 @@
   <body class="text-center">
     
 <main class="form-signin">
-  
-    <img class="mb-4" src="../img//coding.jpg" alt="" width="200" height="200">
+    <p id="time"></p>
+    <p id="date"></p>
+    <img class="mb-4" src="../image/study.jpg" alt="" width="200" height="200">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
@@ -62,6 +63,13 @@
 </html>
 
 <script type="text/javascript">
+  // 화면이 로드되고나서 실행할 수 있다
+  window.onload = function() {
+    // 1초마다 반복하겠다.
+    setInterval(setClock, 1000);
+    
+  };
+
   // alert("환영합니다.");
   console.log('반갑습니다');
   // 원래 로그인은 디비에 저장된
@@ -69,12 +77,25 @@
   // 웹서버에 세션부여해서 로그인유지
   // 지금은 로그인 버튼 눌렀을때
   // id pw 를 js에 출력.
-  function login() {
-    var id = document.querySelector("input[name='id']").value;
-    var pw = document.querySelector("input[name='pw']").value;
+  function login() {  
+    // querySelector html과 소통하는 길  
+    var id = document.querySelector(".form-control").value;
+    var pw = document.querySelector("input[name='pw']").value;    
     console.log(id);
     console.log(pw);
     alert("환영합니다!");
+  }
+
+  function setClock() {
+    var date = new Date();
+    console.log(date.getHours());
+    console.log(date.getMinutes());
+    console.log(date.getSeconds());    
+    var time = date.getHours() + "시" 
+    + date.getMinutes() + "분"
+    + date.getSeconds() + "초"
+    document.getElementById("date").innerHTML = date;
+    document.getElementById("time").innerHTML = time;
   }
 
 

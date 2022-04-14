@@ -21,10 +21,15 @@ node.js
 </html>
 
 <script>
-    // alert("반갑습니다");
-    // var name = prompt("이름을 입력해 주세요");
-    // console.log(name);
-    // confirm("정말 로그인 하실건가요?");
+    // 알림창
+    alert("반갑습니다");
+    // 입력창
+    var name = prompt("이름을 입력해 주세요");
+    // 데이터를 콘솔에 나타내는 함수
+    console.log(name);
+    // 확인창
+    var cf = confirm("정말 로그인 하실건가요?");
+    console.log(cf);
     // 변수는 컴퓨터에 메모리에 주소를 획득하고
     // 그자리에 데이터를 넣어줌
     var number = 40;
@@ -43,7 +48,7 @@ node.js
     c = "css";
     console.log(c);
 
-    const d = "html";
+    const d = "html";    
     console.log(d);
     // const 변수는 변경할 수 없다.
     // d = "bs";
@@ -82,7 +87,7 @@ node.js
     // console.log(myarr);
     myarr.splice(0,1);
     console.log(myarr);
-
+    
     // 객체 key , value
     // {key : value}
     let myinfo = {
@@ -122,18 +127,21 @@ node.js
     // 불린 : 참과 거짓을 판별
     console.log(10 < 20) // true
     console.log(10 > 20) // false
-    console.log(true) // true    
+    console.log(false) // false    
 
     // 제어문
-    if ("거짓") {
+    // if문은 조건이 참일때 실행
+    // else은 조건이 거짓일때 실행
+    if (true) {
         console.log("참입니다.")
     } else {
         console.log("거짓입니다.")
     }
-    // 조건이 맞을때까지 반복
+    // 조건이 맞을때까지(충족) 반복
+    // 반복횟수가 정해져 있다
     // for(변수선언 , 조건 , 변수의 증가)
-    for(var i=0; i<10; i++) {
-        console.log(i);
+    for(var i=1; i<11; i++) {
+        console.log(i + "번째 실행");
     }
 
     // for(var i=0; i<myarr.length; i++) {
@@ -147,6 +155,29 @@ node.js
     for(var key in myinfo) {
         console.log(key + ":" +myinfo[key])
     }
-    // 다음시간 while
+
+    // 이중 for문 99단
+    for(var i=2; i<10; i++) {
+        console.log("---" + i + "단" + "---");
+        for(var j=1; j<10; j++) {
+            console.log(i + "x" + j + "=" + i*j );            
+        }    
+    }
+    // while
+    // 조건이 맞을때까지(충족) 반복
+    // 반복횟수가 정해져 있지 않다.
+    start = 0;
+    while (true) {
+        test();
+        // start를 1씩 증가
+        start = start + 1;
+        // start가 10보다 크다면 break(정지);
+        if(start > 10) {
+            break;
+        }        
+    }    
+    function test() {
+        console.log(start + "번째 while문실행!!");
+    }
     
 </script>
