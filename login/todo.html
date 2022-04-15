@@ -14,7 +14,7 @@
         <div style="padding: 30px; background-color: lightgreen;">
             <h1>할일목록</h1>    
         </div>
-        <div class="input-group flex-nowrap" style="padding: 30px;">
+        <div class="input-group flex-nowrap" style="">
             <!-- window.event.keyCode==13 => enter키 -->
             <!-- onkeyup 속성안에 js 코드를 넣어줌 -->
             <input class="form-control" type="text" id="item" 
@@ -55,6 +55,7 @@
         // <button class="close">
         // &times => html 의 엔티티로써 x를 표현하도록 약속.
         xbtn.innerHTML = '&times';        
+        // <button class="close">x</button>
         // 버튼에 onlick 속성을 부여한다.
         xbtn.onclick = function(e) {
             // e = 내가 클릭한 버튼
@@ -63,11 +64,12 @@
             // ul태그의 자식중에서 선택한 li을 삭제하겟다
             list.removeChild(pnode);
         }
+        // <button class="close" onclick="removeChild(pnode)">x</button>
 
         // li 태그의 자식요소로 x버튼을 넣어줌
         listitem.appendChild(xbtn);
-        
-
     }
+    // js => 많은것을 할 수있다.
+    // 웹안에서도 상당히 필수적인 역활을합니다.
 
 </script>

@@ -93,12 +93,12 @@ node.js
     let myinfo = {
         "name" : "ks",
         "age"  : "939",
-        "loca" : "busan"
+        "loca" : "busan",        
     }
     console.log(typeof(myinfo));
     // 생성create, 출력read, 수정update, 삭제delete
     // crud = 데이터 관리의 모든것
-    console.log(myinfo["name"]);
+    console.log(myinfo["name"]); //ks
     myinfo["height"] = "180";
     console.log(myinfo);
     myinfo["height"] = "170";
@@ -111,7 +111,7 @@ node.js
     // x : 인자
     // y : 출력
     // 함수의 정의
-    // function 함수이름(인자값) {}
+    // function 함수이름(인자값) {}    
     function add(a, b) {
         return a + b;
     }
@@ -127,15 +127,24 @@ node.js
     // 불린 : 참과 거짓을 판별
     console.log(10 < 20) // true
     console.log(10 > 20) // false
-    console.log(false) // false    
+    console.log(!true) // false    
 
     // 제어문
     // if문은 조건이 참일때 실행
     // else은 조건이 거짓일때 실행
-    if (true) {
-        console.log("참입니다.")
+    // ! : 반대
+    // 사회인30 초년생20 학생8 유아0
+    age = 9;
+    if (age > 30) {
+        console.log("사회인입니다.")
+    }
+    else if (age > 20){ 
+        console.log("초년생입니다.");
+    } 
+    else if (age > 8){ 
+        console.log("학생입니다.");
     } else {
-        console.log("거짓입니다.")
+        console.log("유아입니다..")
     }
     // 조건이 맞을때까지(충족) 반복
     // 반복횟수가 정해져 있다
@@ -168,13 +177,12 @@ node.js
     // 반복횟수가 정해져 있지 않다.
     start = 0;
     while (true) {
-        test();
         // start를 1씩 증가
         start = start + 1;
         // start가 10보다 크다면 break(정지);
         if(start > 10) {
             break;
-        }        
+        } 
     }    
     function test() {
         console.log(start + "번째 while문실행!!");

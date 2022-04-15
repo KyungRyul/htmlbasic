@@ -56,6 +56,9 @@
       </label>
     </div>
     <button onclick="login()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button onclick="signup()" style="margin-top: 8px;"
+    class="w-100 btn btn-lg btn-primary" 
+    type="submit">Sign up</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
   
 </main>    
@@ -85,12 +88,16 @@
     location.href = "todo.html";
   }
 
+  function signup() {
+    location.href = "signup.html";
+  }
+
   function setClock() {
     var date = new Date();    
     var time = date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초";
     var ymd = date.getFullYear() + "년"+ date.getMonth() + "월"+ date.getDay() + "일";
-    document.getElementById("date").innerHTML = ymd;
-    document.getElementById("time").innerHTML = time;
+    document.getElementById("date").innerText = ymd;
+    document.getElementById("time").innerHTML = "<b>" + time + "</b>";
   }
 
 
