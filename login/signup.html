@@ -26,43 +26,44 @@
             <div class="col">
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">아이디</h3>                                        
-                    <input class="form-control" type="text">                                            
+                    <input id="uid" class="form-control" type="text">                                            
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호</h3>                                        
-                    <input class="form-control" type="password">                                            
+                    <input id="pw" class="form-control" type="password">                                            
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호확인</h3>                                        
-                    <input class="form-control" type="password">                                            
+                    <input id="cpw" class="form-control" type="password">                                            
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이름</h3>                                        
-                    <input class="form-control" type="text">                                            
+                    <input id="name" class="form-control" type="text">                                            
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">주소</h3>                                        
-                    <input class="form-control" type="text"
+                    <input class="form-control" type="text" 
+                     id = "addr" readonly
                      onclick="postcode()">   
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">생년월일</h3>                                        
-                    <input class="form-control" type="text">                                            
+                    <input id="birth" class="form-control" type="text">                                            
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">성별</h3>                                        
-                    <select class="form-select">
-                        <option value="">남자</option>
-                        <option value="">여자</option>
-                        <option value="">선택안함</option>
+                    <select id="sex" class="form-select">
+                        <option value="man">남자</option>
+                        <option value="women" >여자</option>
+                        <option value="noselect">선택안함</option>
                     </select>                    
                 </div>                
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이메일</h3>                                        
-                    <input class="form-control" type="text">                                            
+                    <input id="email" class="form-control" type="text">                                            
                 </div>                
                 <div>
-                    <button class="btn btn-lg btn-primary" style="width: 100%;">가입하기</button>
+                    <button onclick="getData()" class="btn btn-lg btn-primary" style="width: 100%;">가입하기</button>
                 </div>
             </div>
             <div class="col"></div>
@@ -80,14 +81,24 @@
 <script>
     function postcode() {
         new daum.Postcode({
-        oncomplete: function(data) {
-            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
-            console.log(data);
-            console.log(data["address"]);
-            console.log(data["roadAddressEnglish"]);
+        oncomplete: function(data) {            
+            document.querySelector("#addr").value = data["address"];
+            
         }
         }).open();
+    }
+    function getData() {
+        let uid = document.querySelector("#uid").value;
+        let pw = document.querySelector("#pw").value;
+        let cpw = document.querySelector("#cpw").value;
+        let name = document.querySelector("#name").value;
+        let addr = document.querySelector("#addr").value;
+        let birth = document.querySelector("#birth").value;
+        let sex = document.querySelector("#sex").value;
+        let email = document.querySelector("#email").value;
+
+        console.log(uid , pw , cpw , name , addr , birth ,
+        sex, email);
     }
     
 </script>
