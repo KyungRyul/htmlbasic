@@ -41,6 +41,11 @@
                     <input class="form-control" type="text">                                            
                 </div>
                 <div style="padding: 8px;">
+                    <h3 style="text-align: left;">주소</h3>                                        
+                    <input class="form-control" type="text"
+                     onclick="postcode()">   
+                </div>
+                <div style="padding: 8px;">
                     <h3 style="text-align: left;">생년월일</h3>                                        
                     <input class="form-control" type="text">                                            
                 </div>
@@ -68,3 +73,21 @@
     
 </body>
 </html>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
+    
+</script>
+<script>
+    function postcode() {
+        new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+            console.log(data);
+            console.log(data["address"]);
+            console.log(data["roadAddressEnglish"]);
+        }
+        }).open();
+    }
+    
+</script>
