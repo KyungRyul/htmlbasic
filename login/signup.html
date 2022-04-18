@@ -49,10 +49,16 @@
                     <span id="pwschk" style="color: red; display: none;">
                         비밀번호가 일치하지 않습니다.
                     </span>
+                    <span id="pwsblank" style="color: red; display: none;">
+                        필수 정보 입니다.
+                    </span>
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이름</h3>                                        
-                    <input id="name" class="form-control" type="text">                                            
+                    <input id="name" class="form-control" type="text" required>                                            
+                    <span id="names" style="color: red; display: none;">
+                        필수 정보 입니다.
+                    </span>                    
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">주소</h3>                                        
@@ -136,11 +142,48 @@
             document.querySelector("#pws").style.display = "block";            
         }        
         // 비밀번호 확인
-        if (pw == cpw) {
-            document.querySelector("#pwschk").style.display = "none";            
+        // or => || => a 이거나 b 이거나 둘중에 하나만 참 return true
+        // pw , cpw 같고, cpw가 비어있지 않으면 true
+        // 두조건이 동시에 만족할때 display none => and &&
+        // 참 && 참 => 거짓 or 거짓
+        // 비밀번호확인이 같을때
+        if (pw == cpw) {  
+            // cpw 공백이면          
+            if ( cpw == "") {
+                console.log("같은데 공백");
+                document.querySelector("#pwsblank").style.display = "block";
+            // cpw 공백이아니면                                 
+            } else {
+                console.log("같은데 공백아님");
+                document.querySelector("#pwsblank").style.display = "none";                 
+                document.querySelector("#pwschk").style.display = "none";            
+            }
+        // 비밀번호확인이 같지않을때
+        } else {   
+            // cpw 공백이아니면
+            if ( cpw != "") {
+                console.log("다른데 공백아님");
+                document.querySelector("#pwsblank").style.display = "none";                 
+                document.querySelector("#pwschk").style.display = "block";            
+                
+            // cpw 공백이면 
+            } else {
+                console.log("다른데 공백");
+                document.querySelector("#pwsblank").style.display = "block";                                            
+                document.querySelector("#pwschk").style.display = "none";                    
+            }
+            // pw, cpw 가 같지않거나 , cpw가 비어있으면 경고문을 block
+        }       
+        // name 값이 존재하면 block 아니면 none
+        // 문자열에 값이 존재하지않으면 false
+        // "" => false
+        // "aaa" => true
+        if (name) {
+            // name에 값이 존재하면 경고문 non
+            document.querySelector("#names").style.display = "none";            
         } else {            
-            document.querySelector("#pwschk").style.display = "block";            
-        }        
+            document.querySelector("#names").style.display = "block";            
+        }   
 
         
     }
