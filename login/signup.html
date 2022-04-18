@@ -30,14 +30,25 @@
                     <input maxlength="10" id="uid" class="form-control" type="text" required>                                            
                     <span id="uids" style="color: red; display: none;">5~20자의 영문 소문자, 
                         숫자와 특수기호(_),(-)만 사용 가능합니다.</span>
+                    <span id="uidg" style="color: green; display: none;">
+                        멋진 아이디네요!
+                    </span>
+
+                        
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호</h3>                                        
-                    <input maxlength="10" id="pw" class="form-control" type="password" required>                                            
+                    <input maxlength="16" id="pw" class="form-control" type="password" required>                                            
+                    <span id="pws" style="color: red; display: none;">
+                        8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+                    </span>                    
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호확인</h3>                                        
                     <input maxlength="10" id="cpw" class="form-control" type="password" required>                                            
+                    <span id="pwschk" style="color: red; display: none;">
+                        비밀번호가 일치하지 않습니다.
+                    </span>
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이름</h3>                                        
@@ -66,7 +77,8 @@
                     <input id="email" class="form-control" type="text">                                            
                 </div>                
                 <div>
-                    <button onclick="getData()" class="btn btn-lg btn-primary" style="width: 100%;">가입하기</button>
+                    <button onclick="getData()" class="btn btn-lg btn-primary" style="width: 100%;">
+                        가입하기</button>
                 </div>
                 </form>
             </div>
@@ -108,9 +120,28 @@
         // 정규식에 test를 통과하면 true
         // 정규식에 test를 통과못하면 false
         // 통과한다 => 사용자 값을 제대로 넣었다.
-        if (!idRE.test(uid)){
-            document.querySelector("#uids").style.display = "block";            
+        if (idRE.test(uid)){
+            // 아이디가 유효할때 good 나타내고, s는 사라지게
+            document.querySelector("#uidg").style.display = "block";
+            document.querySelector("#uids").style.display = "none";            
+        } else {
+            document.querySelector("#uids").style.display = "block";
+            document.querySelector("#uidg").style.display = "none";
         }        
+        // 최소 8 자, 최소 하나의 문자, 하나의 숫자 및 하나의 특수 문자 :        
+        var pwRE = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+        if (pwRE.test(pw)){            
+            document.querySelector("#pws").style.display = "none";            
+        } else {            
+            document.querySelector("#pws").style.display = "block";            
+        }        
+        // 비밀번호 확인
+        if (pw == cpw) {
+            document.querySelector("#pwschk").style.display = "none";            
+        } else {            
+            document.querySelector("#pwschk").style.display = "block";            
+        }        
+
         
     }
     
