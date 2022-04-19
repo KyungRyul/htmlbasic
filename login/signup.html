@@ -24,11 +24,14 @@
             <div class="col"></div>
             <!-- 내용을 넣을 DIV -->
             <div class="col">
-                <form> 
+                <!-- form 태그가 실행되면 getdata()
+                index.html 액션을하는데,
+                방법이 get -->
+                <form onsubmit="return getData()" action="index.html"> 
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">아이디</h3>                                        
-                    <input maxlength="10" id="uid" 
-                    class="form-control" type="text" required
+                    <input maxlength="10" id="uid" name="uid"
+                    class="form-control" type="text" required                    
                     onkeyup="chkID()"                    
                     >                                            
                     <span id="uids" style="color: red; display: none;">5~20자의 영문 소문자, 
@@ -41,7 +44,7 @@
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호</h3>                                        
-                    <input maxlength="16" id="pw" class="form-control" 
+                    <input maxlength="16" id="pw" name="pw" class="form-control" 
                     type="password" required
                     onkeyup="chkpw()"                    
                     >                                            
@@ -118,6 +121,7 @@
     
 </script>
 <script>
+    // input태그의 id 변수
     let uid = document.querySelector("#uid");    
     let pw = document.querySelector("#pw");
     let cpw = document.querySelector("#cpw");
@@ -138,16 +142,20 @@
         }).open();
     }
     
-    function getData() {        
+    function getData() {          
         // 유효성검사
-        // 정규식                
-        chkID();        
-        chkpw();        
-        chkcpw();       
-        chkname();
-        chkaddr();
-        chkbirth();
-        chkemail();
+        // 정규식   
+        // return false 
+        // false 값을 반환한다.
+        // 이하 코드는 실행하지 않는다.             
+        return chkID();        
+        return chkpw();        
+        return chkcpw();       
+        return chkname();
+        return chkaddr();
+        return chkbirth();
+        return chkemail();
+        return true;
     }
     function chkID() {
         var idRE = /^[a-zA-z0-9]{5,10}$/;
@@ -157,6 +165,10 @@
         } else {
             document.querySelector("#uids").style.display = "block";
             document.querySelector("#uidg").style.display = "none";
+            // 아이디가 정상적으로 입력이 안됬을때 안넘어가게
+            uid.focus();
+            return false; 
+            
         }
     }
 
@@ -166,6 +178,8 @@
             document.querySelector("#pws").style.display = "none";            
         } else {            
             document.querySelector("#pws").style.display = "block";            
+            pw.focus();
+            return false; 
         }
     }
     
@@ -175,6 +189,8 @@
             if ( cpw.value == "") {
                 console.log("같은데 공백");
                 document.querySelector("#pwsblank").style.display = "block";
+                cpw.focus();
+                return false; 
             // cpw 공백이아니면                                 
             } else {
                 console.log("같은데 공백아님");
@@ -188,12 +204,16 @@
                 console.log("다른데 공백아님");
                 document.querySelector("#pwsblank").style.display = "none";                 
                 document.querySelector("#pwschk").style.display = "block";            
+                cpw.focus();
+                return false; 
                 
             // cpw 공백이면 
             } else {
                 console.log("다른데 공백");
                 document.querySelector("#pwsblank").style.display = "block";                                            
                 document.querySelector("#pwschk").style.display = "none";                    
+                cpw.focus();
+                return false; 
             }
             // pw, cpw 가 같지않거나 , cpw가 비어있으면 경고문을 block
         } 
@@ -205,6 +225,8 @@
             document.querySelector("#names").style.display = "none";            
         } else {            
             document.querySelector("#names").style.display = "block";            
+            name.focus();
+            return false; 
         }
     }
 
@@ -213,6 +235,8 @@
             document.querySelector("#addrs").style.display = "none";            
         } else {            
             document.querySelector("#addrs").style.display = "block";            
+            addr.focus();
+            return false; 
         }  
     }
 
@@ -222,6 +246,8 @@
             document.querySelector("#births").style.display = "none";            
         } else {            
             document.querySelector("#births").style.display = "block";            
+            birth.focus();
+            return false; 
         }
     }
     
@@ -231,6 +257,8 @@
             document.querySelector("#emails").style.display = "none";            
         } else {            
             document.querySelector("#emails").style.display = "block";            
+            email.focus();
+            return false; 
         }   
     }
 </script>
