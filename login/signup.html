@@ -27,11 +27,11 @@
                 <!-- form 태그가 실행되면 getdata()
                 index.html 액션을하는데,
                 방법이 get -->
-                <form onsubmit="return getData()" action="index.html"> 
+                <form name="form" action="index.html" onsubmit="return getData()"> 
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">아이디</h3>                                        
                     <input maxlength="10" id="uid" name="uid"
-                    class="form-control" type="text" required                    
+                    class="form-control" type="text"                     
                     onkeyup="chkID()"                    
                     >                                            
                     <span id="uids" style="color: red; display: none;">5~20자의 영문 소문자, 
@@ -45,7 +45,7 @@
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호</h3>                                        
                     <input maxlength="16" id="pw" name="pw" class="form-control" 
-                    type="password" required
+                    type="password" 
                     onkeyup="chkpw()"                    
                     >                                            
                     <span id="pws" style="color: red; display: none;">
@@ -54,7 +54,7 @@
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">비밀번호확인</h3>                                        
-                    <input maxlength="10" id="cpw" class="form-control" type="password" required onkeyup="chkcpw()">                                            
+                    <input maxlength="10" id="cpw" class="form-control" type="password"  onkeyup="chkcpw()">                                            
                     <span id="pwschk" style="color: red; display: none;">
                         비밀번호가 일치하지 않습니다.
                     </span>
@@ -64,7 +64,7 @@
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이름</h3>                                        
-                    <input id="name" class="form-control" type="text" required onkeyup="chkname()">                                            
+                    <input id="name" class="form-control" type="text"  onkeyup="chkname()">                                            
                     <span id="names" style="color: red; display: none;">
                         필수 정보 입니다.
                     </span>                    
@@ -147,27 +147,34 @@
         // 정규식   
         // return false 
         // false 값을 반환한다.
-        // 이하 코드는 실행하지 않는다.             
-        return chkID();        
-        return chkpw();        
-        return chkcpw();       
-        return chkname();
-        return chkaddr();
-        return chkbirth();
-        return chkemail();
-        return true;
+        // 이하 코드는 실행하지 않는다.                  
+        if(!chkID()) {
+            uid.focus();
+            return false; 
+        }
+        if(!chkpw()) {
+            pw.focus();
+            return false; 
+        }        
+        chkcpw();       
+        chkname();
+        chkaddr();
+        chkbirth();
+        chkemail();
+        
     }
     function chkID() {
         var idRE = /^[a-zA-z0-9]{5,10}$/;
         if (idRE.test(uid.value)){        
             document.querySelector("#uidg").style.display = "block";
             document.querySelector("#uids").style.display = "none";            
+            return true;
         } else {
             document.querySelector("#uids").style.display = "block";
             document.querySelector("#uidg").style.display = "none";
             // 아이디가 정상적으로 입력이 안됬을때 안넘어가게
-            uid.focus();
-            return false; 
+            return false;
+            
             
         }
     }
@@ -178,8 +185,7 @@
             document.querySelector("#pws").style.display = "none";            
         } else {            
             document.querySelector("#pws").style.display = "block";            
-            pw.focus();
-            return false; 
+            return false;
         }
     }
     
