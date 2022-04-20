@@ -103,7 +103,7 @@
                     </span>                                                             
                 </div>                
                 <div>
-                    <button onclick="getData()" class="btn btn-lg btn-primary" style="width: 100%;">
+                    <button onclick="" class="btn btn-lg btn-primary" style="width: 100%;">
                         가입하기</button>
                 </div>
                 </form>
@@ -148,19 +148,50 @@
         // return false 
         // false 값을 반환한다.
         // 이하 코드는 실행하지 않는다.                  
-        if(!chkID()) {
+        // if(!chkID()) {
+        //     uid.focus();
+        //     return false; 
+        // }
+        // if(!chkpw()) {
+        //     pw.focus();
+        //     return false; 
+        // }        
+        if(chkID()) {                        
+        } else {            
             uid.focus();
-            return false; 
+            return false;            
         }
-        if(!chkpw()) {
+        if(chkpw()) {                        
+        } else {            
             pw.focus();
-            return false; 
-        }        
-        chkcpw();       
-        chkname();
-        chkaddr();
-        chkbirth();
-        chkemail();
+            return false;            
+        }
+        if(chkcpw()) {                        
+        } else {            
+            cpw.focus();
+            return false;            
+        }
+        if(chkname()) {                        
+        } else {            
+            name.focus();
+            return false;            
+        }
+        if(chkaddr()) {                        
+        } else {            
+            addr.focus();
+            return false;            
+        }
+        if(chkbirth()) {                        
+        } else {            
+            birth.focus();
+            return false;            
+        }
+        if(chkemail()) {                        
+        } else {            
+            email.focus();
+            return false;            
+        }
+        
         
     }
     function chkID() {
@@ -183,6 +214,7 @@
         var pwRE = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
         if (pwRE.test(pw.value)){            
             document.querySelector("#pws").style.display = "none";            
+            return true;
         } else {            
             document.querySelector("#pws").style.display = "block";            
             return false;
@@ -202,6 +234,7 @@
                 console.log("같은데 공백아님");
                 document.querySelector("#pwsblank").style.display = "none";                 
                 document.querySelector("#pwschk").style.display = "none";            
+                return true;
             }
         // 비밀번호확인이 같지않을때
         } else {   
@@ -229,6 +262,7 @@
         if (name.value) {
             // name에 값이 존재하면 경고문 non
             document.querySelector("#names").style.display = "none";            
+            return true;
         } else {            
             document.querySelector("#names").style.display = "block";            
             name.focus();
@@ -239,6 +273,7 @@
     function chkaddr() {
         if (addr.value) {            
             document.querySelector("#addrs").style.display = "none";            
+            return true;
         } else {            
             document.querySelector("#addrs").style.display = "block";            
             addr.focus();
@@ -250,6 +285,7 @@
         var birthRE = /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/;
         if(birthRE.test(birth.value)) {            
             document.querySelector("#births").style.display = "none";            
+            return true;
         } else {            
             document.querySelector("#births").style.display = "block";            
             birth.focus();
@@ -261,6 +297,7 @@
         var emailRE = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
         if(emailRE.test(email.value)) {            
             document.querySelector("#emails").style.display = "none";            
+            return true;
         } else {            
             document.querySelector("#emails").style.display = "block";            
             email.focus();
