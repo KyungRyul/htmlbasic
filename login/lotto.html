@@ -86,10 +86,11 @@
         <div class="row">
             <div class="content">
                 <div class="title">
-                    <h2><strong style="color: orange;">1011</strong> 회 당첨결과</h2>
+                    <h2><strong style="color: orange;">
+                        1012</strong> 회 1등번호</h2>
                 </div>
                 <div class="">
-                <p>2022년 04월 16일 추첨</p>
+                <p>2022년 04월 23일 추첨</p>
                 </div>
                 <p>
                     <div class="numbers">
@@ -120,9 +121,46 @@
                         </div>
                     </div>
                 </p>
+                <button onclick="makeNumber()"
+class="btn btn-primary btn-lg">번호생성</button>
             </div>
         </div>
     </div>
     
 </body>
 </html>
+
+<script>
+    // 로또번호 7개를 생성해서 number 수정
+    // 변수 7개를 만들거나, 리스트에 7개의 요소를 넣거나
+    // 요소 : 랜덤한 7개의 숫자가 중복되지 않게.
+    // 각 변수에 1~45사이의 랜덤숫자를 부여하고
+    // 중복된 숫자는 다른숫자를 부여
+    // 현재는 리스트를 쓸건데,
+    // [1,2,3, ... , 45] => 숫자를 shuffle 해서 0~6요소
+    // 랜덤한 숫자를 생성해서 리스트에 넣어준다
+    // 단, 리스트에 이미 같은 숫자가 있으면 다시 숫자생성
+    numberlist = [];
+    // 1~45까지 숫자가 들어간 리스트생성
+    for(i=1; i<46; i++) {
+        numberlist.push(i);
+    }
+    console.log(numberlist);
+    // 리스트를 무작위로 => sort : 분류
+    // 우리는 return 무작위로 나와야한다
+    // return 값이 a , b 값에 상관없이 1,1,1,1,-1,-1-1
+    numberlist.sort(() =>
+        // - 값이나 + 값이 랜덤하게 나와야한다.
+        // Math.random() => 0~1 
+        // 랜덤한 0~1 - 0.5
+        Math.random() - 0.5
+    )
+    console.log(numberlist);
+
+    console.log(Math.random()); 
+    console.log(Math.random()); 
+    console.log(Math.random()); 
+    function makeNumber() {
+        // 변수초기화 , 조건 , i++        
+    }
+</script>
