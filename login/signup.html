@@ -13,6 +13,7 @@
         margin-top: 30px;
         margin-bottom: 60px;
     }
+    
 </style>
 <body style="background-color: #f5f6f7;">
     <div style="padding: 30px; text-align: center;">
@@ -21,7 +22,10 @@
 
     <div class="">
         <div class="row">
-            <div class="col"></div>
+            <div class="col">
+                <div id="liveAlertPlaceholder"></div>
+<button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+            </div>
             <!-- 내용을 넣을 DIV -->
             <div class="col">
                 <!-- form 태그가 실행되면 getdata()
@@ -108,7 +112,20 @@
                 </div>
                 </form>
             </div>
-            <div class="col"></div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../image/main.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+
+                  <span style="border-radius: 100%;
+                   background-color: 
+                   aquamarine; font-size: 100px;">10</span>
+            </div>
     
         </div> 
     </div>
@@ -121,6 +138,21 @@
     
 </script>
 <script>
+    var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+var alertTrigger = document.getElementById('liveAlertBtn')
+
+function alert(message, type) {
+  var wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+  alertPlaceholder.append(wrapper)
+}
+
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', function () {
+    alert('Nice, you triggered this alert message!', 'success')
+  })
+}
     // input태그의 id 변수
     let uid = document.querySelector("#uid");    
     let pw = document.querySelector("#pw");
