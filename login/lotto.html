@@ -121,7 +121,7 @@
                         </div>
                     </div>
                 </p>
-                <button onclick="makeNumber()"
+                <button onclick="makeNumber2()"
 class="btn btn-primary btn-lg">번호생성</button>
             </div>
         </div>
@@ -141,6 +141,38 @@ class="btn btn-primary btn-lg">번호생성</button>
     // 랜덤한 숫자를 생성해서 리스트에 넣어준다
     // 단, 리스트에 이미 같은 숫자가 있으면 다시 숫자생성
     // 번호를 담을 리스트 변수를 선언
+    function makeNumber2() {
+        numberlist2 = [];
+        // Math.random() 0~1 으로 1~45 사이의 숫자를 만드려면
+        // random에서 45 곱해주고 , 버림해주고 , + 1        
+        for(var i=0; i<7; i++) {
+            // 랜덤숫자 생성
+            var number2 = Math.floor(Math.random() * 44) + 1;
+            // 리스트에 number2가 존재하면 number2를 다시생성
+            for(var j in numberlist2) {
+                // 생성된 숫자가 리스트에 이미 있으면
+                while (true) {
+                    if (numberlist2[j] == number2) {
+                    // 숫자를 다시생성
+                        number2 = Math.floor(Math.random() * 44) + 1;                                        
+                    } else {
+                        break;
+                    }
+                }
+                
+            }
+            // 리스트에 생성된 숫자를 푸시.
+            numberlist2.push(number2);
+        }
+        var bonus = numberlist2.pop()        
+        numberlist2.sort((a,b) => a-b);
+        console.log("6개 리스트" , numberlist2);
+        console.log("보너스" , bonus);
+
+        
+
+
+    }
     
     function makeNumber() {
         // 리스트 초기화
@@ -169,6 +201,20 @@ class="btn btn-primary btn-lg">번호생성</button>
         for(var i =0; i<7; i++) {            
             if(i == 6) {
                 number[i].innerText = bonus;
+                if (bonus < 10) {
+                    number[i].style.backgroundColor = "yellow";
+                }
+                else if (bonus < 20) {
+                    number[i].style.backgroundColor = "skyblue";
+                }
+                else if (bonus < 30) {
+                    number[i].style.backgroundColor = "tomato";
+                }
+                else if (bonus < 40) {
+                    number[i].style.backgroundColor = "grey";
+                } else {
+                    number[i].style.backgroundColor = "green";
+                }
             } else {
                 number[i].innerText = lottonumber[i];
                 if (lottonumber[i] < 10) {
