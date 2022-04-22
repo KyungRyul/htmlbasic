@@ -95,10 +95,10 @@
                 <p>
                     <div class="numbers">
                         <div class="lotto">
-                            <span class="number">40</span>
-                            <span class="number">30</span>
-                            <span class="number">20</span>
-                            <span class="number">10</span>
+                            <span class="number">1</span>
+                            <span class="number">2</span>
+                            <span class="number">3</span>
+                            <span class="number">4</span>
                             <span class="number">5</span>
                             <span class="number">6</span>
                         </div>
@@ -166,12 +166,19 @@ class="btn btn-primary btn-lg">번호생성</button>
         
         var number = document.querySelectorAll('.number')
         console.log(number);
-        for(var i =0; i<7; i++) {
-            number[i].innerText = lottonumber[i];
+        for(var i =0; i<7; i++) {            
             if(i == 6) {
                 number[i].innerText = bonus;
+            } else {
+                number[i].innerText = lottonumber[i];
             }
-        }  
+        }
+        
+        // 1~9 노란색
+        // 10~19 하늘색
+        // 20~29 연빨
+        // 30~39 회색
+        // 40~45 초록색
     }
       
     
