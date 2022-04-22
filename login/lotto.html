@@ -171,7 +171,24 @@ class="btn btn-primary btn-lg">번호생성</button>
                 number[i].innerText = bonus;
             } else {
                 number[i].innerText = lottonumber[i];
+                if (lottonumber[i] < 10) {
+                    number[i].style.backgroundColor = "yellow";
+                }
+                else if (lottonumber[i] < 20) {
+                    number[i].style.backgroundColor = "skyblue";
+                }
+                else if (lottonumber[i] < 30) {
+                    number[i].style.backgroundColor = "tomato";
+                }
+                else if (lottonumber[i] < 40) {
+                    number[i].style.backgroundColor = "grey";
+                } else {
+                    number[i].style.backgroundColor = "green";
+                }
+                
             }
+            
+            
         }
         
         // 1~9 노란색
