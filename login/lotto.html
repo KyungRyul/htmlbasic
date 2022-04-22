@@ -95,10 +95,10 @@
                 <p>
                     <div class="numbers">
                         <div class="lotto">
-                            <span class="number">1</span>
-                            <span class="number">2</span>
-                            <span class="number">3</span>
-                            <span class="number">4</span>
+                            <span class="number">40</span>
+                            <span class="number">30</span>
+                            <span class="number">20</span>
+                            <span class="number">10</span>
                             <span class="number">5</span>
                             <span class="number">6</span>
                         </div>
@@ -141,41 +141,40 @@ class="btn btn-primary btn-lg">번호생성</button>
     // 랜덤한 숫자를 생성해서 리스트에 넣어준다
     // 단, 리스트에 이미 같은 숫자가 있으면 다시 숫자생성
     // 번호를 담을 리스트 변수를 선언
-    numberlist = [];
+    
+    function makeNumber() {
+        // 리스트 초기화
+        numberlist = [];
+        for(i=1; i<46; i++) {
+            numberlist.push(i);
+        }
 
-    for(i=1; i<46; i++) {
-        numberlist.push(i);
+        numberlist.sort(() => Math.random() - 0.5)
+
+        var lottonumber = numberlist.slice(0,7);    
+        console.log("로또넘버7개" , lottonumber );
+        // pop() => 배열에 마지막요소를 제거하고
+        // 그 요소를 반환
+        var bonus = lottonumber.pop();
+        
+        console.log("로또넘버6개" , lottonumber );
+        console.log("보너스번호" , bonus );
+
+        lottonumber.sort((a,b) => a-b)
+        
+        console.log("정렬된6개" , lottonumber);
+        
+        var number = document.querySelectorAll('.number')
+        console.log(number);
+        for(var i =0; i<7; i++) {
+            number[i].innerText = lottonumber[i];
+            if(i == 6) {
+                number[i].innerText = bonus;
+            }
+        }  
     }
-
-    numberlist.sort(() => Math.random() - 0.5)
-
-    var lottonumber = numberlist.slice(0,7);    
-    console.log("로또넘버7개" , lottonumber );
-    // pop() => 배열에 마지막요소를 제거하고
-    // 그 요소를 반환
-    var bonus = lottonumber.pop();
-    
-    console.log("로또넘버6개" , lottonumber );
-    console.log("보너스번호" , bonus );
-
-    lottonumber.sort((a,b) => a-b)
-    
-    console.log("정렬된6개" , lottonumber);
+      
     
     
     
-    // numberlist.sort(() =>
-    //     // - 값이나 + 값이 랜덤하게 나와야한다.
-    //     // Math.random() => 0~1 
-    //     // 랜덤한 0~1 - 0.5
-    //     Math.random() - 0.5
-    // )
-    // console.log(numberlist);
-
-    // console.log(Math.random()); 
-    // console.log(Math.random()); 
-    // console.log(Math.random()); 
-    // function makeNumber() {
-    //     // 변수초기화 , 조건 , i++        
-    // }
 </script>
