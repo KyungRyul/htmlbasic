@@ -160,29 +160,36 @@
     // 지역변수 : 함수내부에만 존재하는 변수
     var numberlist = [];
     var bonus;
-
+    // makeNumber 번호생성(무료) 만들어지는 추첨번호
+    var lottonumber = [];
     // 자동구매시 함수실행
     function autoMakeNumber() {
         // 랜덤 6개 리스트 생성
         buycnt = 0;
-        numberlist = [];
+        
         while (buycnt < 1000) {
+            // numberlist 초기화
+            numberlist = [];
             buycnt++;
             for(i=1; i<46; i++) {
-            numberlist.push(i);
+                numberlist.push(i);
             }
             numberlist.sort(() => Math.random() - 0.5)
-            
-            var lottonumber = numberlist.slice(0,6); 
+            // 자동생성번호
+            var autolottonumber = numberlist.slice(0,6); 
             // 오름차순정렬        
-            lottonumber.sort((a,b) => a-b)        
-            // 버튼 눌렀을때 생성된 자동번호
-            console.log(lottonumber);   
+            autolottonumber.sort((a,b) => a-b)        
+            // 버튼 눌렀을때 생성된 자동번호            
             // lottonumber 랑 numberlist 비교
+            // 비교대상 번호생성(무료) <-> 자동생성
             var sameCnt = 0;
+            console.log("==============");
+            console.log(autolottonumber);   
+            console.log(lottonumber); // =>21600생성
+            console.log("==============");
             for(var j=0; j<6; j++) {
-                lottonumber.find(function (value) {
-                    if (numberlist[j] == value) {
+                autolottonumber.find(function (value) {
+                    if (lottonumber[j] == value) {
                         sameCnt++;
                     }
                 })
@@ -348,7 +355,8 @@
 
         numberlist.sort(() => Math.random() - 0.5)
         
-        var lottonumber = numberlist.slice(0,7);    
+        // **요기 => var
+        lottonumber = numberlist.slice(0,7);    
         
         console.log("로또넘버7개" , lottonumber );
         // pop() => 배열에 마지막요소를 제거하고
