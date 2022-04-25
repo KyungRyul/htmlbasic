@@ -136,8 +136,10 @@
                     <input class="customNumber" type="text" maxlength="2">
                 </p>
                 <button onclick="checkResult()"class="btn btn-primary btn-lg">결과확인</button>
+                <p id="displayResult"></p>
+                
                 <div style="height: 100vh;">
-
+                            
                 </div>
             </div>
         </div>
@@ -175,24 +177,28 @@
                 if (bonus == value) {
                     bonusChk = true;
                 }
-            })
-        console.log("당첨숫자" + numberlist);
-        console.log("같은 숫자개수" + sameCnt);
-        if (sameCnt == 3) {
-            console.log("축하합니다. 5등에 당첨되었습니다.");
-        } else if (sameCnt == 4) {
-            console.log("축하합니다. 4등에 당첨되었습니다.");
+            })        
+        if (sameCnt == 3) {            
+            document.querySelector("#displayResult").innerText 
+            = "축하합니다. 5등에 당첨되었습니다.";
+        } else if (sameCnt == 4) {            
+            document.querySelector("#displayResult").innerText 
+            = "축하합니다. 4등에 당첨되었습니다.";
         } else if (sameCnt == 5) {
-            if (bonusChk) {
-                console.log("축하합니다. 2등에 당첨되었습니다.");    
-            } else {
-                console.log("축하합니다. 3등에 당첨되었습니다.");
+            if (bonusChk) {                
+                document.querySelector("#displayResult").innerText 
+            = "축하합니다. 2등에 당첨되었습니다.";
+            } else {                
+                document.querySelector("#displayResult").innerText 
+            = "축하합니다. 3등에 당첨되었습니다.";
             }            
         }
-        else if (sameCnt == 6) {
-            console.log("축하합니다. 1등에 당첨되었습니다.");
-        } else {
-            console.log("안타깝지만, 다음기회에!^^!");
+        else if (sameCnt == 6) {            
+            document.querySelector("#displayResult").innerText 
+            = "축하합니다. 1등에 당첨되었습니다.";
+        } else {            
+            document.querySelector("#displayResult").innerText 
+            = "안타깝지만, 다음기회에!^^!";
         }
         
 
@@ -296,28 +302,28 @@
         
         var number = document.querySelectorAll('.number')
         console.log(number);
-        for(var i =0; i<7; i++) {            
-            if(i == 6) {
-                number[i].innerText = bonus;                
-            } else {
-                number[i].innerText = lottonumber[i];               
-            }
+        // for(var i =0; i<7; i++) {            
+        //     if(i == 6) {
+        //         number[i].innerText = bonus;                
+        //     } else {
+        //         number[i].innerText = lottonumber[i];               
+        //     }
 
-            if (number[i].innerText < 10) {
-                    number[i].style.backgroundColor = "yellow";
-                }
-                else if (number[i].innerText < 20) {
-                    number[i].style.backgroundColor = "skyblue";
-                }
-                else if (number[i].innerText < 30) {
-                    number[i].style.backgroundColor = "tomato";
-                }
-                else if (number[i].innerText < 40) {
-                    number[i].style.backgroundColor = "grey";
-                } else {
-                    number[i].style.backgroundColor = "green";
-                }
-        }
+        //     if (number[i].innerText < 10) {
+        //             number[i].style.backgroundColor = "yellow";
+        //         }
+        //         else if (number[i].innerText < 20) {
+        //             number[i].style.backgroundColor = "skyblue";
+        //         }
+        //         else if (number[i].innerText < 30) {
+        //             number[i].style.backgroundColor = "tomato";
+        //         }
+        //         else if (number[i].innerText < 40) {
+        //             number[i].style.backgroundColor = "grey";
+        //         } else {
+        //             number[i].style.backgroundColor = "green";
+        //         }
+        // }
         
         // 1~9 노란색
         // 10~19 하늘색
