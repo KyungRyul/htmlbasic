@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>클릭시 색깔변화</p>
+    <button onclick="chagneColor()">색깔</button>
+    <button onclick="chagneContent('효성정보')">내용</button>
+    <ul id="append"></ul>
+    <button onclick="appendContent()">내용추가</button>
+    <button onclick="removeContent()">내용삭제</button>
+</body>
+</html>
+<script>
+    
+    function removeContent() {
+        var item = document.querySelectorAll('li');
+        var removeItem = item[0];        
+        document.querySelector("#append").removeChild(removeItem);
+    }
+    function appendContent() {
+        // li만들기
+        var item = document.createElement('li');
+        item.innerText= "추가된 내용";
+        console.log(item);
+        document.querySelector('#append').appendChild(item);
+    }
+    function chagneContent(content) {
+        document.querySelector('p').innerText = content;
+    }
+    function chagneColor() {
+        document.querySelector('p').style.color = "red";
+    }
+    var test = true;
+    // 조건문
+    if(test) {
+        console.log("참입니다");
+    } else {
+        console.log("거짓입니다")
+    }
+    var i = 1
+    i = i + 1    
+    // 반복문
+    // for (i=2; i<10; i++) {        
+    //     for(j=1; j<10; j++) {
+    //         console.log("i값=" + i.toString() + "j값=" + j.toString() + "=" + i*j.toString());
+    //     }
+            
+    // }
+</script>
