@@ -121,8 +121,10 @@
                         </div>
                     </div>
                 </p>
+                <button onclick="makeNumber()"
+class="btn btn-primary btn-lg">번호생성(무료)</button>
                 <button onclick="makeNumber2()"
-class="btn btn-primary btn-lg">번호생성</button>
+class="btn btn-primary btn-lg">번호생성(유료)</button>
             </div>
         </div>
     </div>
@@ -168,6 +170,37 @@ class="btn btn-primary btn-lg">번호생성</button>
         numberlist2.sort((a,b) => a-b);
         console.log("6개 리스트" , numberlist2);
         console.log("보너스" , bonus);
+        // 여기까지가 번호 6 + 보너스 1개 생성완료
+
+        var number = document.querySelectorAll(".number");
+        
+        for (var i=0; i<7; i++) {
+            if(i==6) {
+                // number 배열의 6번째는 보너스번호의 자리
+                number[i].innerText = bonus
+            } else {
+                number[i].innerText = numberlist2[i]
+            }            
+            if (number[i].innerText < 10) {
+                number[i].style.backgroundColor = "yello";
+            }
+            else if (number[i].innerText < 20) {
+                number[i].style.backgroundColor = "skyblue";
+            }
+            else if (number[i].innerText < 30) {
+                number[i].style.backgroundColor = "tomato";
+            }
+            else if (number[i].innerText < 40) {
+                number[i].style.backgroundColor = "grey";
+            }
+            else {
+                number[i].style.backgroundColor = "green";
+            }
+
+        }
+
+
+
 
         
 
@@ -200,41 +233,25 @@ class="btn btn-primary btn-lg">번호생성</button>
         console.log(number);
         for(var i =0; i<7; i++) {            
             if(i == 6) {
-                number[i].innerText = bonus;
-                if (bonus < 10) {
-                    number[i].style.backgroundColor = "yellow";
-                }
-                else if (bonus < 20) {
-                    number[i].style.backgroundColor = "skyblue";
-                }
-                else if (bonus < 30) {
-                    number[i].style.backgroundColor = "tomato";
-                }
-                else if (bonus < 40) {
-                    number[i].style.backgroundColor = "grey";
-                } else {
-                    number[i].style.backgroundColor = "green";
-                }
+                number[i].innerText = bonus;                
             } else {
-                number[i].innerText = lottonumber[i];
-                if (lottonumber[i] < 10) {
+                number[i].innerText = lottonumber[i];               
+            }
+
+            if (number[i].innerText < 10) {
                     number[i].style.backgroundColor = "yellow";
                 }
-                else if (lottonumber[i] < 20) {
+                else if (number[i].innerText < 20) {
                     number[i].style.backgroundColor = "skyblue";
                 }
-                else if (lottonumber[i] < 30) {
+                else if (number[i].innerText < 30) {
                     number[i].style.backgroundColor = "tomato";
                 }
-                else if (lottonumber[i] < 40) {
+                else if (number[i].innerText < 40) {
                     number[i].style.backgroundColor = "grey";
                 } else {
                     number[i].style.backgroundColor = "green";
                 }
-                
-            }
-            
-            
         }
         
         // 1~9 노란색
