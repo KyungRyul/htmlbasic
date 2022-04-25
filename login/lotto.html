@@ -75,6 +75,10 @@
     .title {        
         padding-top: 30px;
     }
+
+    .customNumber {
+        width: 30px;
+    }
 </style>
 <body>
     <div class="header">
@@ -121,10 +125,20 @@
                         </div>
                     </div>
                 </p>
-                <button onclick="makeNumber()"
-class="btn btn-primary btn-lg">번호생성(무료)</button>
-                <button onclick="makeNumber2()"
-class="btn btn-primary btn-lg">번호생성(유료)</button>
+                <button onclick="makeNumber()" class="btn btn-primary btn-lg">번호생성(무료)</button>
+                <button onclick="makeNumber2()"class="btn btn-primary btn-lg">번호생성(유료)</button>
+                <p style="margin-top: 50px;">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                </p>
+                <button onclick="checkResult()"class="btn btn-primary btn-lg">결과확인</button>
+                <div style="height: 100vh;">
+
+                </div>
             </div>
         </div>
     </div>
@@ -133,6 +147,57 @@ class="btn btn-primary btn-lg">번호생성(유료)</button>
 </html>
 
 <script>
+    // 전역변수 : 코드 전체에 같이하는 변수
+    // 지역변수 : 함수내부에만 존재하는 변수
+    var numberlist = [];
+    var bonus;
+    function checkResult() {
+        var customNumberlist = [];
+        var customNumber = document.querySelectorAll('.customNumber');        
+        for(var i=0; i<6; i++) {
+            customNumberlist.push(customNumber[i].value);
+        }
+        // 사용자가 입력한 숫자랑 당첨 숫자랑 비교 등수를 출력        
+        // customNumberlist.sort() => 저번시간썻던, 정렬
+        // customNumberlist.find() => 요소한개를 찾는 함수
+        // customNumberlist.filter() => 여러개를 찾는 함수
+        // 몇개가 같은지를 확인
+        var sameCnt = 0;
+        for(var j=0; j<6; j++) {
+            customNumberlist.find(function (value) {
+                if (numberlist[j] == value) {
+                    sameCnt++;
+                }
+            })
+        }
+        var bonusChk = false;
+        customNumberlist.find(function (value) {
+                if (bonus == value) {
+                    bonusChk = true;
+                }
+            })
+        console.log("당첨숫자" + numberlist);
+        console.log("같은 숫자개수" + sameCnt);
+        if (sameCnt == 3) {
+            console.log("축하합니다. 5등에 당첨되었습니다.");
+        } else if (sameCnt == 4) {
+            console.log("축하합니다. 4등에 당첨되었습니다.");
+        } else if (sameCnt == 5) {
+            if (bonusChk) {
+                console.log("축하합니다. 2등에 당첨되었습니다.");    
+            } else {
+                console.log("축하합니다. 3등에 당첨되었습니다.");
+            }            
+        }
+        else if (sameCnt == 6) {
+            console.log("축하합니다. 1등에 당첨되었습니다.");
+        } else {
+            console.log("안타깝지만, 다음기회에!^^!");
+        }
+        
+
+    }
+
     // 로또번호 7개를 생성해서 number 수정
     // 변수 7개를 만들거나, 리스트에 7개의 요소를 넣거나
     // 요소 : 랜덤한 7개의 숫자가 중복되지 않게.
@@ -220,7 +285,7 @@ class="btn btn-primary btn-lg">번호생성(유료)</button>
         console.log("로또넘버7개" , lottonumber );
         // pop() => 배열에 마지막요소를 제거하고
         // 그 요소를 반환
-        var bonus = lottonumber.pop();
+        bonus = lottonumber.pop();
         
         console.log("로또넘버6개" , lottonumber );
         console.log("보너스번호" , bonus );
