@@ -10,6 +10,7 @@
     .header {
         grid-area: hd;
         background-color: antiquewhite;
+        position: relative;
     }
     .side {
         grid-area: sd;
@@ -33,11 +34,18 @@
         "sd sd ct ct ct ct ct ct ct"
         "ft ft ft ft ft ft ft ft ft"
         ;
+      
     }
     .item {
         width: 100%;
         height: 100%;
-        background-color: lightcoral;
+        background-color: lightcoral;      
+    }
+
+    .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 
 
@@ -45,7 +53,7 @@
 </style>
 <body>
     <div class="container">
-        <div class="header">헤더</div>
+        <div class="header"><div class="inner">헤더</div></div>
         <div class="side">사이드메뉴</div>
         <div class="content">컨텐츠</div>
         <div class="footer">푸터</div>
