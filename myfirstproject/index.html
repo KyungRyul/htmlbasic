@@ -15,12 +15,23 @@
 
     #header {
         position: sticky;
+
         top: 0;
         text-align: center;
         background-color: black;
-        color: white;
-        padding: 30px;
+        color: white;     
+        height: 60px;           
+        line-height: 60px;        
+        margin-bottom: 60px;
         z-index: 1;
+    }
+
+    .footer {
+        background-color: black;
+        padding: 50px;
+        color: white;
+        text-align: center;
+
     }
 
     #header a {
@@ -34,31 +45,51 @@
     }
 
     .home {
-        padding-top:10%;        
-        padding-bottom:10%;        
-        height: 50%;       
+        padding:10%;           
+        margin-top: 10%;      
+        margin-bottom: 10%;      
+        height: 50%;      
+        background-color: #fafafa; 
     }
 
     .work {
-        padding-top:10%;                
+        padding:10%;                
         height: 50%;
+        margin-bottom: 10%;
         background-color: #fafafa;
     }
 
     .portfolio {
         padding-top:10%;
-        height: 100vh;
-        background-color: yellow;
+        height: 100%;
+        margin-bottom: 10%;
+        background-color: #fafafa;
     }
 
     .contact {
         padding-top:10%;
-        height: 100vh;
-        background-color: green;
+        /* height: 100vh; */
+        background-color: #999999;
+        padding-bottom: 10%;
+        margin-bottom: 10%;
     }
 
     #mainImage {
-        border-radius: 100%;
+        border-radius: 20%;
+    }
+
+    .col {
+        margin: 8px;
+    }
+
+    .conContent {
+        padding: 16px;
+        width: 100%;
+    }
+
+    .conContentInput {
+        width: 100%;
+        background-color: #282828;
     }
 
     
@@ -74,14 +105,14 @@
         <a href="#portfolio"><b class="menu">portfolio</b></a>
         <a href="#contact"><b class="menu">contact</b></a>
     </div>
-    <div class="">
+    <div class="container">
         <div id="home" class="home">        
             <div class="row">
                 <div class="col" style="display: flex; justify-content:center;">
-                    <img id="mainImage" src="../image/pic00.jpg">
+                    <img id="mainImage" src="./image/gongu.jpg">
                 </div>
                 <div class="col">
-                    <h1 style="padding-top: 20%;">Hi. I'm Jane Doe.</h1>
+                    <h1 style="padding-top: 20%;">Hi. I'm 2kr.</h1>
                     <p>And this is Miniport, a free, fully responsive HTML5 site template designed by AJ for HTML5 UP & released under the CCA license.</p>                
                     <button type="button" class="btn btn-success">helloWorld</button>
 
@@ -90,13 +121,13 @@
         </div>
         <div id="work" class="work">
             <div class="row" style="text-align: center;">
-                <h1>Here's all the stuff I do.</h1>
-                <p>Odio turpis amet sed consequat eget posuere consequat.</p>                
+                <h1>내가 가진것.</h1>
+                <p>나는 코딩을 하기위한 모든 것을 가지고 있다.</p>                
                 <div class="col" style="display: flex; justify-content:center;">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="../image/main.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="./image/hands.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">손</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -104,9 +135,9 @@
                 </div>
                 <div class="col" style="display: flex; justify-content:center;">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="../image/main.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="./image/brain.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">두뇌</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -114,9 +145,9 @@
                 </div>
                 <div class="col" style="display: flex; justify-content:center;">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="../image/main.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="./image/macbook.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">노트북</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -130,11 +161,179 @@
             </div>
         </div>
         <div id="portfolio" class="portfolio">
+            <div class="row" style="text-align: center;">
+                <h1>Here's all skill I do.</h1>
+                <p>Odio turpis amet sed consequat eget posuere consequat.</p>                
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/web.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>                   
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/angular.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/aws.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/csharp.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/docker.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/firebase.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/flutter.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src=".image/go.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/java.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/mysql.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/node.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/php.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col" style="display: flex; justify-content:center;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./image/python.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+                <div>
+                    <button type="button" class="btn btn-primary" style="width: 30%;">helloWorld</button>
+                </div>
+                
+            </div>
 
         </div>
         <div id="contact" class="contact">
+            <div class="row" style="text-align: center;">             
+                <h1>Im waitting your email</h1>
+                <p>당신의 이메일을 항상 기다리고 있다.</p>   
+                          
+                <div class="col-2"></div>
+                <div class="col-8">
+                    
+                    <div class="conContent" style="width: 50%;">
+                        <input class="conContentInput" type="text" class="form-control" placeholder="이름" aria-label="이름" aria-describedby="basic-addon1">
+                    </div>                   
+                    <div class="conContent" >                    
+                        <input class="conContentInput" type="text" class="form-control" placeholder="제목" aria-label="제목" aria-describedby="basic-addon1">
+                    </div>   
+                    <div class="conContent">                    
+                        <textarea class="conContentInput" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" style="width: 30%;">전송</button>
+                </div>
+                <div class="col-2"></div>
 
+
+                
+                
+                
+            </div>
         </div>
+    </div>
+
+    <div class="footer">
+        see you!
     </div>
 </body>
 </html>
