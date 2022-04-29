@@ -1,12 +1,5 @@
 # 효성직업전문학교
 
-first project
-
-- html
-- css
-- javascript
-
-
 오재용 : https://github.com/foryou2210
 
 이경훈 : https://github.com/howlhowl1 
