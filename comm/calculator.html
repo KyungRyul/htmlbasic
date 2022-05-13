@@ -98,18 +98,18 @@
             <div onclick="selectNumber(7)">7</div>
             <div onclick="selectNumber(8)">8</div>
             <div onclick="selectNumber(9)">9</div>
-            <div class="oper"><button class="division operator" onclick="division()">/</button></div>
+            <div class="oper"><button class="division operator" onclick="calculator('division')">/</button></div>
             <div onclick="selectNumber(6)">6</div>
             <div onclick="selectNumber(5)">5</div>
             <div onclick="selectNumber(4)">4</div>
-            <div class="oper"><button class="mul operator" onclick="mul()">*</button></div>
+            <div class="oper"><button class="mul operator" onclick="calculator('mul')">*</button></div>
             <div onclick="selectNumber(3)">3</div>
             <div onclick="selectNumber(2)">2</div>
             <div onclick="selectNumber(1)">1</div>
-            <div class="oper"><button class="sub operator" onclick="sub()">-</button></div>
+            <div class="oper"><button class="sub operator" onclick="calculator('sub')">-</button></div>
             <div onclick="selectNumber(0)">0</div>
             <div>.</div>
-            <div class="oper"><button class="add operator" onclick="add()">+</button></div>
+            <div class="oper"><button class="add operator" onclick="calculator('add')">+</button></div>
             
         </div>
     </div>
@@ -133,6 +133,7 @@
 
     // 숫자를 입력받기위한 함수
     function selectNumber(number) {
+        console.log("입력값" + number);
         if( inputNumber.value == 0 || ctype != '') {
             console.log('다른입력값');
             inputNumber.value = number;     
@@ -144,30 +145,40 @@
     }
 
     // 계산하는 함수
-    // function calculator(oper) {       
-    //     if(ctype == '') {
-    //         ctype = oper;        
-    //     }        
-    //     if(preInputNumber && savedCtype == oper) {
-    //         nextInputNumber = parseInt(inputNumber.value);        
-    //         resultNumber = preInputNumber + nextInputNumber;        
-    //         inputNumber.value = resultNumber;                    
-    //         nextInputNumber = 0;
-    //     } else {
-    //         result();
-    //     }
+    function calculator(oper) {    
+        console.log("계산");
+        console.log('savedCtype:' + savedCtype)
+        console.log('oper:' + oper)
+        
+        if(ctype == '') {
+            ctype = oper;        
+        }        
+        if(preInputNumber && savedCtype == oper) {
+            nextInputNumber = parseInt(inputNumber.value);                                
+            if(oper == 'add'){
+                resultNumber = preInputNumber + nextInputNumber;        
+            }
+            if(oper == 'sub') {
+                inputNumber.value - resultNumber;                    
+            }            
+            if(oper == 'mul') {
+                inputNumber.value * resultNumber;                    
+            }            
+            if(oper == 'division') {
+                inputNumber.value / resultNumber;                    
+            }
+            
+            nextInputNumber = 0;
+        } else {
+            result();
+        }
 
-    //     preInputNumber = parseInt(inputNumber.value);        
-    // }
+        preInputNumber = parseInt(inputNumber.value);        
+    }
 
     // 결과값 출력
     function result() {         
         if (savedCtype == 'add') {
-            // 원래는 calculator() 실행해야하는데
-            // 기존의 add()함수로 실행하고있습니다.
-            // calculator() => add() , sub() ... 합친 함수
-            // add()로 실행해도 문제가 없다.
-            
             add();
             document.querySelector(".number").value = resultNumber;
             savedCtype == '';
@@ -191,9 +202,18 @@
 
     // 리셋
     function reset() {
+         // 계산할 값
+        preInputNumber = 0;
+        nextInputNumber = 0;
+        
+        // 입력값 출력값
+        inputNumber = document.querySelector(".number");
         inputNumber.value = 0;
         resultNumber = 0;
-        preInputNumber = 0;
+
+        // 타입구분
+        ctype = '';
+        savedCtype = '';
     }
 
     function add() {       
