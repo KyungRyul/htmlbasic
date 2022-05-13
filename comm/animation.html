@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .animation {
+        background-color: blueviolet;        
+        animation: animove;
+        animation-duration: 1s;
+        /* width를 제거해서 전체 단락을 최종 차지함 */
+    }
+    @keyframes animove {
+        from {
+            margin-left: 100%;
+            width: 50px;
+        }
+        to {
+            margin-left: 0%;
+            width: 500px;
+        }
+    }
+
+    .animation2 {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: tomato;        
+        animation: move2 5s;   
+    /* 팅기는 이유는 근처의 div랑 겹처서 팅겻다. */
+    }
+    @keyframes move2 {
+        0% {
+            left: 0px; top: 0px;
+        }
+        25% {
+            left: 200px; top: 0px;
+        }
+        50% {
+            left: 200px; top: 200px;
+        }
+        75% {
+            left: 0px; top: 200px;
+        }
+        100% {
+            left: 0px; top: 0px;
+        }
+        
+    }
+</style>
+<body>
+    <div class="animation">
+        애니메이션
+    </div>    
+    <div class="animation2">
+        애니메이션2
+    </div>
+</body>
+</html>

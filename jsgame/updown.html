@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .header {
+        padding: 30px;
+        font-size: 30px;
+        text-align: center;
+        background-color: blueviolet;
+    }
+
+    .container {
+        margin: 30px;
+        height: 100vh;
+        background-color: violet;
+        text-align: center;
+    }
+
+    .status {
+        background-color: aquamarine;
+    }
+
+    .result {
+        display: none;
+        text-align: center;
+
+    }
+
+</style>
+
+<body>
+    <div class="header">
+        <h1>js</h1>
+    </div>
+    <div class="container" >        
+        <div class="status">
+            <h2>도전횟수 : <b id="count">0</b> 번 </h2>
+        </div>
+        <div class="prestart">
+            <button onclick="gameStart()" style="width: 30%; height: 300px; background-color: teal; font-size: 60px;">시작</button>             
+        </div>
+        <div class="result">        
+            <p>
+            <label for="batting">예상숫자</label>
+            <input id="batting" value="">
+            <button onclick="play()">도전!</button>
+            </p>
+            <p id="result" style="height: 50vh; background-color: blueviolet; margin: 10%;"></p>    
+            <button onclick="restart()" style="width: 20%; height: 100px; background-color: green; font-size: 30px;">다시하기</button>    
+        </div>
+        
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    var randomNumber = 0;
+    var count = 0;
+
+    function gameStart() {
+        randomNumber = Math.floor(Math.random() * 100);
+        document.querySelector(".result").style.display = "block";
+        document.querySelector(".prestart").style.display = "none";        
+    }
+
+    function play(select) { 
+        count = count + 1;
+        document.querySelector("#count").innerText = count;
+        var customNumber = document.querySelector('#batting').value;
+        if (randomNumber == customNumber) {
+
+        }
+         
+       
+    }
+    function restart() {
+        count = 0;
+        document.querySelector("#count").innerText = count;
+    }
+</script>

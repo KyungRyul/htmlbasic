@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .header {
+        display: flex;
+    }
+    .image {
+        flex-grow: 1;
+        background-color: yellow;
+    }
+    .search {
+        flex-grow: 3;
+        background-color: orange;
+    }
+    .nav {
+        background-color: green;
+    }
+    .container {
+        display: flex;
+    }
+    .left {
+        
+        flex-grow: 7;
+    }
+    .right {
+        margin-left: 1%;
+        flex-grow: 3;
+        background-color: cadetblue;
+    }
+</style>
+<body>
+    <div class="header">
+        <div class="image">
+            <img src="../image/angular.png" alt="" width="50px">
+        </div>
+        <div class="search">
+            <input type="text">
+        </div>
+    </div>
+    <div class="nav">
+        네이게이션 영역
+    </div>
+    <div class="container">
+        <div class="left">
+            <div>이미지영역</div>
+            <div>뉴스영역</div>
+            <div>뉴스그리드영역</div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <div class="right">
+            오른쪽영역
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</body>
+</html>
