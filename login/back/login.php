@@ -4,7 +4,7 @@
     $email = $_POST['email'];
     $pw = $_POST['pw'];
 
-    $sql = "select password from member 
+    $sql = "select no, email, password from member 
             where email = '$email'";
 
     // 쿼리 실행
@@ -19,7 +19,13 @@
     } else {
         // 비밀번호가 맞는지 확인
         if($pw == $db_pw['password']) {
-            echo "로그인성공!";
+            $_SESSION['no'] = $db_pw['no'];
+            $_SESSION['email'] = $db_pw['email'];            
+            echo "
+            <script>
+                location.href='todo.php';
+            </script>
+            ";
         } else {
             echo "패스워드 맞지 않습니다!";
         }
