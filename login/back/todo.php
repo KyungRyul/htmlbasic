@@ -10,6 +10,6 @@ if($user_no) {
     </script>
     ";
 }
-
+include('header.php');
 include('../view/todo.html');
 ?>
