@@ -31,7 +31,12 @@
                 <!-- form 태그가 실행되면 getdata()
                 index.html 액션을하는데,
                 방법이 get -->
-                <form name="form" action="index.html" onsubmit="return getData()"> 
+                <form action="signup.php" method="get">
+                    <input name="gogoname" type="text" >
+                </form>
+
+
+                <form name="form" action="signup.php" onsubmit="" method="post"> 
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">아이디</h3>                                        
                     <input maxlength="10" id="uid" name="uid"
@@ -68,14 +73,14 @@
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이름</h3>                                        
-                    <input id="name" class="form-control" type="text"  onkeyup="chkname()">                                            
+                    <input id="name" name="name" class="form-control" type="text"  onkeyup="chkname()">                                            
                     <span id="names" style="color: red; display: none;">
                         필수 정보 입니다.
                     </span>                    
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">주소</h3>                                        
-                    <input class="form-control" type="text" 
+                    <input name="location" class="form-control" type="text" 
                      id = "addr" readonly
                      onclick="postcode()">   
                     <span id="addrs" style="color: red; display: none;">
@@ -84,7 +89,7 @@
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">생년월일</h3>                                        
-                    <input id="birth" class="form-control" type="text" 
+                    <input id="birth" name="birth" class="form-control" type="text" 
                     maxlength="6" placeholder="생년월일6자" 
                     onkeyup="chkbirth()">                                            
                     <span id="births" style="color: red; display: none;">
@@ -93,7 +98,7 @@
                 </div>
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">성별</h3>                                        
-                    <select id="sex" class="form-select" >
+                    <select id="sex" name="sex" class="form-select" >
                         <option value="man">남자</option>
                         <option value="women" >여자</option>
                         <option value="noselect" selected>선택안함</option>
@@ -101,7 +106,7 @@
                 </div>                
                 <div style="padding: 8px;">
                     <h3 style="text-align: left;">이메일</h3>                                        
-                    <input id="email" class="form-control" type="text" onkeyup="chkemail()">   
+                    <input id="email" name="email" class="form-control" type="text" onkeyup="chkemail()">   
                     <span id="emails" style="color: red; display: none;" >
                         필수 정보 입니다.
                     </span>                                                             

@@ -36,31 +36,22 @@
   <body class="text-center">
     
 <main class="form-signin">
-    <p id="time"></p>
-    <p id="date"></p>
-    <img class="mb-4" src="../image/study.jpg" alt="" width="200" height="200">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input name="id" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input name="pw" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button onclick="login()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <form action="./login.php" method="post">
+      <div class="form-floating">
+        <input name="idididididi" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input name="pwpwpwpwpwp" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <button onclick="login()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>      
+      
+    </form>
     <button onclick="signup()" style="margin-top: 8px;"
-    class="w-100 btn btn-lg btn-primary" 
-    type="submit">Sign up</button>
+      class="w-100 btn btn-lg btn-primary" 
+      type="submit">Sign up</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-  
 </main>    
   </body>
 </html>
@@ -80,13 +71,13 @@
   // 웹서버에 세션부여해서 로그인유지
   // 지금은 로그인 버튼 눌렀을때
   // id pw 를 js에 출력.
-  function login() {  
-    // querySelector html과 소통하는 길  
-    var id = document.querySelector(".form-control").value;
-    var pw = document.querySelector("input[name='pw']").value;        
-    alert("환영합니다!");
-    location.href = "todo.html";
-  }
+  // function login() {  
+  //   // querySelector html과 소통하는 길  
+  //   var id = document.querySelector(".form-control").value;
+  //   var pw = document.querySelector("input[name='pw']").value;        
+  //   alert("환영합니다!");
+  //   location.href = "todo.html";
+  // }
 
   function signup() {
     location.href = "signup.html";
