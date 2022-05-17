@@ -12,6 +12,31 @@
     $email = $_POST['email'];    
 
     
-    $sql = "";
+    $sql = "insert into member set
+    email = '$id',
+    password = '$pw',
+    name = '$name',
+    age = '$birth',
+    sex = '$sex',
+    location = '$location'    
+    ";
+    echo $sql;
+
+    $result = $conn -> query($sql);
+
+    if ($result) {
+        echo "
+        <script>
+            location.href='todo.html';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            location.back();
+        </script>
+        ";
+    }
+    
 
 ?>
