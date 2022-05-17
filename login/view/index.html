@@ -31,18 +31,18 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="../assets/style/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
 <main class="form-signin">
-    <form action="./login.php" method="post">
+    <form action="../back/login.php" method="post">
       <div class="form-floating">
-        <input name="idididididi" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input name="email" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
-        <input name="pwpwpwpwpwp" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input name="pw" type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
       <button onclick="login()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>      

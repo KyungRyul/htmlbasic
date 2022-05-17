@@ -27,7 +27,7 @@
     if ($result) {
         echo "
         <script>
-            location.href='todo.html';
+            location.href='todo.php';
         </script>
         ";
     } else {
