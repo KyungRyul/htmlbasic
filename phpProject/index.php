@@ -2,7 +2,7 @@
 
 include ("common.php");
 if ($_SESSION) {
-    echo "로그인 정보가 있습니다";
+    
 } else {
     echo "
     <script>
@@ -27,6 +27,7 @@ if ($_SESSION) {
     <div style="background-color: black; padding:30px; color:white; text-align:center">
         header
         <?php echo $_SESSION['email'] . "님 환영합니다"?>        
+        <button onclick="myInfoUpdate()">정보수정</button>
         <button onclick="logout()">로그아웃</button>
     </div>
 </body>
@@ -34,5 +35,8 @@ if ($_SESSION) {
 <script>
     function logout() {
         location.href="logout.php";
+    }
+    function myInfoUpdate() {
+        location.href="my_info_update.php";
     }
 </script>
