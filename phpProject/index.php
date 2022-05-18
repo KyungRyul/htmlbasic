@@ -26,6 +26,7 @@ if ($_SESSION) {
 <body>
     <div style="background-color: black; padding:30px; color:white; text-align:center">
         header
+        <?php echo $_SESSION['email'] . "님 환영합니다"?>
     </div>
 </body>
 </html>
