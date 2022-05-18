@@ -6,7 +6,7 @@ if ($_SESSION) {
 } else {
     echo "
     <script>
-        location.href='login.php';
+        location.href='sign_in.php';
     </script>
     ";
     

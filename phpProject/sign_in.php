@@ -1,6 +1,6 @@
 <?php 
 
 include ("common.php");
-include ("./view/login.html")
+include ("./view/sign_in.html")
 ?>
 
