@@ -26,7 +26,13 @@ if ($_SESSION) {
 <body>
     <div style="background-color: black; padding:30px; color:white; text-align:center">
         header
-        <?php echo $_SESSION['email'] . "님 환영합니다"?>
+        <?php echo $_SESSION['email'] . "님 환영합니다"?>        
+        <button onclick="logout()">로그아웃</button>
     </div>
 </body>
 </html>
+<script>
+    function logout() {
+        location.href="logout.php";
+    }
+</script>
