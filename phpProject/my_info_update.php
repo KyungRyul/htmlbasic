@@ -104,8 +104,9 @@ include('common.php');
     </div>
     <button style="margin-bottom: 10px;" class="w-100 btn btn-lg btn-primary" type="submit">수정완료</button>    
     
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
+  <button onclick="outMember()" style="margin-bottom: 10px;" class="w-100 btn btn-lg btn-danger" type="submit">탈퇴하기</button>    
+  <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
 </main>
 
 
@@ -114,7 +115,16 @@ include('common.php');
 </html>
 
 
-<script>
-
+<script>  
+  function outMember() {
+    var checkPassword = prompt('비밀번호를 입력하세요');    
+    var sessionPassword = '<?php echo $_SESSION['pw'] ?>';
+    if (checkPassword == sessionPassword) {
+      location.href='out_member.php';
+    } else {
+      alert('비밀번호를 수정할 수 없습니다.');
+    }
+    
+  }
 </script>
 

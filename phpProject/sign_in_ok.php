@@ -38,9 +38,9 @@ if($db_pw) {
     }
     
 } else {
-    echo "
-    <script>
-        histroy.back()
+    echo "    
+    <script>       
+        history.back();
     </script>
     ";   
 }

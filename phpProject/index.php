@@ -30,6 +30,9 @@ if ($_SESSION) {
         <button onclick="myInfoUpdate()">정보수정</button>
         <button onclick="logout()">로그아웃</button>
     </div>
+    <?php for($i=0; $i<10; $i++) { ?>
+        <p>aa</p>
+    <?php }?>
 </body>
 </html>
 <script>
