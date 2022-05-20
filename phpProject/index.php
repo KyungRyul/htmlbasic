@@ -32,17 +32,11 @@ $result = $conn -> query($sql);
     <title>Document</title>
 </head>
 <body>
-    <div style="background-color: black; padding:30px; color:white; text-align:center">
-        header
-        <?php echo $_SESSION['email'] . "님 환영합니다"?>        
-        <button onclick="myInfoUpdate()">정보수정</button>
-        <button onclick="logout()">로그아웃</button>
-    </div>
+    <div style=" padding:30px; color:black; text-align:center">
+        header        
+    </div>    
     <div>
-        <?php include('view/board.html'); ?>
-    </div>
-    <div>
-        <table class="table table-dark table-striped table-hover" 
+        <table class="table table-secondary table-striped table-hover" 
         style="text-align: center;">
             <thead>
                 <tr>
