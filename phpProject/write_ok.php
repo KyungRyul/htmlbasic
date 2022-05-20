@@ -2,7 +2,7 @@
 
 include('common.php');
 $title = $_POST['title'];
-$content = $_POST['content'];
+$content = addslashes($_POST['content']);
 $writer = $_SESSION['email'];
 $insertTime = date("Y-m-d H:i:s");
 

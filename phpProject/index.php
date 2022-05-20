@@ -12,6 +12,14 @@ if ($_SESSION) {
     
 }
 
+$sql = "select 
+            no,
+            title,
+            writer,
+            insertTime
+        from board";
+
+$result = $conn -> query($sql);
 
 ?>
 
@@ -32,6 +40,26 @@ if ($_SESSION) {
     </div>
     <div>
         <?php include('view/board.html'); ?>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>구분</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>시간</th>
+            </thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <tr>
+                    <td><?php echo $row['no'] ?></td>
+                    <td><?php echo $row['title'] ?></td>
+                    <td><?php echo $row['writer'] ?></td>
+                    <td><?php echo $row['insertTime'] ?></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
    
 </body>
