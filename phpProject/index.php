@@ -42,18 +42,25 @@ $result = $conn -> query($sql);
         <?php include('view/board.html'); ?>
     </div>
     <div>
-        <table>
+        <table class="table table-dark table-striped table-hover" 
+        style="text-align: center;">
             <thead>
-                <th>구분</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>시간</th>
+                <tr>
+                    <th>구분</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>시간</th>
+                </tr>
             </thead>
             <tbody>
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $row['no'] ?></td>
-                    <td><?php echo $row['title'] ?></td>
+                    <td>
+                        <a href="content.php?no=<?php echo $row['no'] ?>">
+                        <?php echo $row['title'] ?>
+                        </a>                        
+                    </td>
                     <td><?php echo $row['writer'] ?></td>
                     <td><?php echo $row['insertTime'] ?></td>
                 </tr>

@@ -12,3 +12,4 @@ $conn = mysqli_connect($host, $user, null, $db);
 // print_r($conn);
 
 ?>
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
