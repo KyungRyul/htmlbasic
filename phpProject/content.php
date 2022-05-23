@@ -54,7 +54,7 @@ if($data) {
     </p>    
     <p>
     <b>
-    좋아요 : <?php echo $data['goodCount'];?>
+    좋아요 : <label id="goodCount"> <?php echo $data['goodCount'];?> </label>
     조회수 : <?php echo $data['count'];?>
     </b>    
     
@@ -67,6 +67,7 @@ if($data) {
 </div>
 
 <script>
+    var contentNo = <?php echo $no; ?>;
     function updateContent() {
         location.href='update_content.php?no=' + <?php echo $no ?>;
     }
@@ -78,6 +79,22 @@ if($data) {
         if(className == 'bi bi-heart') {
             document.querySelector('#good').setAttribute('class', 'bi bi-heart-fill');
             document.querySelector('#good').style.color = 'red';
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function () {
+                if(this.status == 200 && this.readyState == this.DONE) {        
+                    console.log(http.response);
+                    if(JSON.parse(http.response)['result'] != 'n'){
+                        // 좋아요 갯수 최신화
+                        document.querySelector('#goodCount').innerText = JSON.parse(http.response)['result'];
+                    } else {
+                    }
+                }            
+            }            
+            
+            var url = "http://localhost/02/phpProject/api/update_good.php?no=" + contentNo;
+            
+            http.open('GET', url);
+            http.send();
         } 
         if(className == 'bi bi-heart-fill') {
             document.querySelector('#good').setAttribute('class', 'bi bi-heart');
