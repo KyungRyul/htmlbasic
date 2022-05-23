@@ -7,9 +7,10 @@ $db   = "hyosung3";
 $conn = mysqli_connect($host, $user, null, $db);
 
 $no = $_GET['no'];
+$cancle = $_GET['cancle'];
 
 $sql = "update board set
-        goodCount = goodCount + 1        
+        goodCount = goodCount + $cancle        
         where no = $no";
 
 $result = $conn -> query($sql);

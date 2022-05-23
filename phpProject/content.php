@@ -81,17 +81,18 @@ if($data) {
             document.querySelector('#good').style.color = 'red';
             var http = new XMLHttpRequest();
             http.onreadystatechange = function () {
-                if(this.status == 200 && this.readyState == this.DONE) {        
-                    console.log(http.response);
+                if(this.status == 200 && this.readyState == this.DONE) {                            
                     if(JSON.parse(http.response)['result'] != 'n'){
                         // 좋아요 갯수 최신화
-                        document.querySelector('#goodCount').innerText = JSON.parse(http.response)['result'];
+                        document.querySelector('#goodCount').innerText 
+                        = JSON.parse(http.response)['result'];
                     } else {
+                        alert('실패');
                     }
                 }            
             }            
             
-            var url = "http://localhost/02/phpProject/api/update_good.php?no=" + contentNo;
+            var url = "http://localhost/02/phpProject/api/update_good.php?no=" + contentNo+ '&&cancle=+1';
             
             http.open('GET', url);
             http.send();
@@ -99,6 +100,23 @@ if($data) {
         if(className == 'bi bi-heart-fill') {
             document.querySelector('#good').setAttribute('class', 'bi bi-heart');
             document.querySelector('#good').style.color = '';
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function () {
+                if(this.status == 200 && this.readyState == this.DONE) {                            
+                    if(JSON.parse(http.response)['result'] != 'n'){
+                        // 좋아요 갯수 최신화
+                        document.querySelector('#goodCount').innerText 
+                        = JSON.parse(http.response)['result'];
+                    } else {
+                        alert('실패');
+                    }
+                }            
+            }            
+            
+            var url = "http://localhost/02/phpProject/api/update_good.php?no=" + contentNo + '&&cancle=-1';
+            
+            http.open('GET', url);
+            http.send();
         } 
         
     }
