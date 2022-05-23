@@ -41,18 +41,21 @@ if($data) {
         글수정                
     </div>    
     <div style="margin: 10%;">
-        <form action="write_ok.php" method="post">
+        <form action="update_content_ok.php" method="post">
+            <input type="hidden" name="no" value="<?php echo $no;?>">
             <div style="padding: 2%;">
                 <label for="title">제목</label>
-                <input id="title" name="title" value="<?php echo $data['title'];?>" type="text" width="50%" >
+                <input id="title" name="title" 
+                value="<?php echo $data['title'];?>" type="text" width="50%" >
             </div>
             
             <div style="padding: 2%; width: 100%; height: 300px;" >
                 <p for="content">내용</p>
-                <textarea id="content" name="content" style="width: 50%; height:50%;"><?php echo $data['content'];?></textarea>
+                <textarea id="content" name="content" style="width: 50%; height:50%;">
+                <?php echo $data['content'];?></textarea>
             </div>
             <div style="padding: 2%;">
-                <button>작성완료</button>
+                <button>수정완료</button>
             </div>
         </form>
     </div>
