@@ -4,6 +4,12 @@ include('common.php');
 
 $no = $_GET['no'];
 
+$sql_u = "update board             
+        set count = count + 1         
+        where no = '$no'";
+
+$result_u = $conn -> query($sql_u);
+
 $sql = "select 
             title,
             content,
